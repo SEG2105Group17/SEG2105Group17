@@ -5,7 +5,7 @@ Fall 2021 Seg2105
   - Daniel Andreev (300168201)
   - Brett Athaide (300177291)
   - Natasha Tremblay Daszkiewicz (300168364)
-  - Other
+  - Leo Fraser (300188114)
   - Other
   - Other
 
