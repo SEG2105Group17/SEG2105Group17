@@ -7,5 +7,5 @@ Fall 2021 Seg2105
   - Natasha Tremblay Daszkiewicz (300168364)
   - Leo Fraser (300188114)
   - Other
-  - Other
+
 
