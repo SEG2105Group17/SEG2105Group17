@@ -6,6 +6,6 @@ Fall 2021 Seg2105
   - Brett Athaide (300177291)
   - Natasha Tremblay Daszkiewicz (300168364)
   - Leo Fraser (300188114)
-  - Other
+  - Diyar Amjadi (300191707)
 
 
