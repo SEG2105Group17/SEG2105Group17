@@ -203,7 +203,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
-        android:id="@+id/buttonP"
+        android:id="@+id/buttonA"
         android:layout_width="61dp"
         android:layout_height="48dp"
         android:text="+"
@@ -211,11 +211,11 @@
         tools:layout_editor_absoluteY="359dp" />
 
     <Button
-        android:id="@+id/buttonM"
+        android:id="@+id/buttonS"
         android:layout_width="61dp"
         android:layout_height="48dp"
         android:text="-"
-        app:layout_constraintTop_toBottomOf="@+id/buttonP"
+        app:layout_constraintTop_toBottomOf="@+id/buttonA"
         tools:layout_editor_absoluteX="334dp" />
 
     <Button
@@ -223,7 +223,7 @@
         android:layout_width="61dp"
         android:layout_height="48dp"
         android:text="x"
-        app:layout_constraintTop_toBottomOf="@+id/buttonM"
+        app:layout_constraintTop_toBottomOf="@+id/buttonS"
         tools:layout_editor_absoluteX="334dp" />
 
     <Button
