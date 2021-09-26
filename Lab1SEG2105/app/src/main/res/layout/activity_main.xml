@@ -71,7 +71,7 @@
         android:layout_marginRight="19dp"
         android:text="On"
         app:layout_constraintEnd_toStartOf="@+id/button0"
-        tools:layout_editor_absoluteY="654dp" />
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
 
     <Button
         android:id="@+id/buttonSqrt"
@@ -138,7 +138,7 @@
         android:layout_marginRight="104dp"
         android:text="0"
         app:layout_constraintEnd_toEndOf="@+id/buttonDec"
-        tools:layout_editor_absoluteY="654dp" />
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
         android:id="@+id/buttonPie"
@@ -196,9 +196,11 @@
         android:id="@+id/buttonDec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
         android:text="."
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        tools:layout_editor_absoluteX="232dp" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonEq"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
         android:id="@+id/buttonP"
@@ -260,7 +262,6 @@
         android:layout_width="377dp"
         android:layout_height="140dp"
         android:layout_marginBottom="156dp"
-        android:text="Welcome to Calc SEG"
         app:layout_constraintBottom_toBottomOf="@+id/textViewSol"
         tools:layout_editor_absoluteX="22dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
