@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private Button clr;
     private Button del;
     private Button eq;
+    private TextView prob;
+    private TextView sol;
 
 
 
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupButtons(){
+        // BUttons
         one = (Button)findViewById(R.id.button1);
         two = (Button)findViewById(R.id.button2);
         three = (Button)findViewById(R.id.button3);
@@ -71,5 +75,9 @@ public class MainActivity extends AppCompatActivity {
         exp = (Button)findViewById(R.id.buttonPow);
         e = (Button)findViewById(R.id.buttonE);
         sqrt = (Button)findViewById(R.id.buttonSqrt);
+
+        //Text view
+        prob = (TextView)findViewById(R.id.textViewProb);
+        sol = (TextView)findViewById(R.id.textViewSol);
     }
 }

@@ -258,7 +258,7 @@
         tools:layout_editor_absoluteY="180dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewProb"
         android:layout_width="377dp"
         android:layout_height="140dp"
         android:layout_marginBottom="156dp"
