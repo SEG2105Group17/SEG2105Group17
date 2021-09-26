@@ -45,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setupButtons();
+        setupText();
+
+
     }
 
     private void setupButtons(){
@@ -75,7 +80,9 @@ public class MainActivity extends AppCompatActivity {
         exp = (Button)findViewById(R.id.buttonPow);
         e = (Button)findViewById(R.id.buttonE);
         sqrt = (Button)findViewById(R.id.buttonSqrt);
+    }
 
+    private void setupText(){
         //Text view
         prob = (TextView)findViewById(R.id.textViewProb);
         sol = (TextView)findViewById(R.id.textViewSol);
