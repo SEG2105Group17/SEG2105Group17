@@ -39,8 +39,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView prob;
     private TextView sol;
 
+    private final char ADD = '+';
+    private final char SUB = '-';
+    private final char DIV = '/';
+    private final char MUL = '*';
+    private final char MOD = '%';+
+    private char OPERATION;
 
-
+    private double num = Double.NaN;
+    private double num2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -221,4 +228,31 @@ public class MainActivity extends AppCompatActivity {
         prob = (TextView)findViewById(R.id.textViewProb);
         sol = (TextView)findViewById(R.id.textViewSol);
     }
+
+    private void calc(){
+        if (!Double.isNaN(num)){
+            num2 = Double.parseDouble(prob.getText().toString());
+
+            switch(OPERATION){
+                case ADD:
+                    num += num2;
+                    break;
+                case SUB:
+                    num -= num2;
+                    break;
+                case DIV:
+                    num /= num2;
+                    break;
+                case MUL:
+                    num *= num2;
+                    break;
+                case MOD:
+                    num %= num2;
+                    break;
+            }
+        } else {
+            num = Double.parseDouble(prob.getText().toString());
+        }
+    }
+
 }
