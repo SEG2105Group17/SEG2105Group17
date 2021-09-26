@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private final char SUB = '-';
     private final char DIV = '/';
     private final char MUL = '*';
-    private final char MOD = '%';+
+    private final char MOD = '%';
     private char OPERATION;
 
     private double num = Double.NaN;
