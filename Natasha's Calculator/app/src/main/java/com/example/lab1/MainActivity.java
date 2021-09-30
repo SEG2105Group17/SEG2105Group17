@@ -145,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < display.getText().length(); i++){
                     if(display.getText().charAt(i) == dec){
 
+                        
                         return;
                     }
                 }
