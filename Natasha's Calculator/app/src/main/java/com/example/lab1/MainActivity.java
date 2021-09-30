@@ -140,6 +140,15 @@ public class MainActivity extends AppCompatActivity {
         btnDec.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                char dec = '.';
+
+                for (int i = 0; i < display.getText().length(); i++){
+                    if(display.getText().charAt(i) == dec){
+                        return;
+                    }
+                }
+
+
                 if(display.getText()==""){
                     display.setText("0.");
                 }
@@ -181,6 +190,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (display.getText()==""){
                     display.setText("-");
+                }
+                else if(display.getText()=="-"){
+                    return;
                 }
                 else{
                     calculate();
