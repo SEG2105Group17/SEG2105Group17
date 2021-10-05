@@ -1,0 +1,10 @@
+com/example/profilemanager/BuildConfig.java
+ com.example.profilemanager.BuildConfig
+com/example/profilemanager/ProfileActivity.java
+ com.example.profilemanager.ProfileActivity
+ com.example.profilemanager.ProfileActivity$1
+com/example/profilemanager/MainActivity.java
+ com.example.profilemanager.MainActivity
+ com.example.profilemanager.MainActivity$1
+ com.example.profilemanager.MainActivity$2
+ com.example.profilemanager.MainActivity$2$1
