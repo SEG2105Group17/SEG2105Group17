@@ -10,7 +10,8 @@
         android:layout_width="418dp"
         android:layout_height="400dp"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="324dp">
+        tools:layout_editor_absoluteY="324dp"
+        tools:ignore="MissingConstraints">
 
         <TableRow
             android:layout_width="match_parent"
@@ -101,5 +102,6 @@
         android:layout_height="wrap_content"
         android:text="Select a new Avatar"
         tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="134dp" />
+        tools:layout_editor_absoluteY="134dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
