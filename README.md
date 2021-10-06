@@ -7,4 +7,4 @@ Natasha Tremblay Daszkiewicz (300168364)
 Leo Fraser (300188114)
 Diyar Amjadi (300191707)
 
-Start of Lab2 (Profile Manager)
+Lab2 (Profile Manager)
