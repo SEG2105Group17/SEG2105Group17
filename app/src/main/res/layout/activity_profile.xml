@@ -7,10 +7,13 @@
     tools:context=".ProfileActivity">
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="418dp"
         android:layout_height="400dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="324dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAvatar">
 
         <TableRow
             android:layout_width="match_parent"
@@ -22,6 +25,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag03" />
 
             <ImageView
@@ -29,6 +33,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag02" />
 
             <ImageView
@@ -36,6 +41,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag01" />
         </TableRow>
 
@@ -49,6 +55,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag06" />
 
             <ImageView
@@ -56,6 +63,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag05" />
 
             <ImageView
@@ -63,6 +71,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag04" />
         </TableRow>
 
@@ -76,6 +85,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag09" />
 
             <ImageView
@@ -83,6 +93,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag08" />
 
             <ImageView
@@ -90,6 +101,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:onClick="SetTeamIcon"
                 app:srcCompat="@drawable/flag07" />
         </TableRow>
 
@@ -100,6 +112,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select a new Avatar"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="134dp" />
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

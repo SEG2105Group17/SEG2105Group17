@@ -1,7 +1,13 @@
 package com.example.profilemanager;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -60,7 +66,69 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(mapIntent);
             }
         });
+        /*
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                profileActivityResultLauncher.launch(intent);
+            }
+        });
+        */
+    }
+    ActivityResultLauncher<Intent> profileActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>(){
+                @SuppressLint("NonConstantResourceId")
+                @Override
+                public void onActivityResult(ActivityResult result){
+                    if(result.getResultCode() == Activity.RESULT_OK){
+                        //There are no request codes
+                        Intent data = result.getData();
+                        //adding code here in next slide
+                        ImageView imageView = (ImageView) findViewById(R.id.imageView);
 
+                        String drawableName = "flag01";
+                        switch(data.getIntExtra("imageID", R.id.imageView2)){
+                            case R.id.imageView2:
+                                drawableName = "flag01";
+                                break;
+                            case R.id.imageView3:
+                                drawableName = "flag02";
+                                break;
+                            case R.id.imageView4:
+                                drawableName = "flag03";
+                                break;
+                            case R.id.imageView5:
+                                drawableName = "flag04";
+                                break;
+                            case R.id.imageView6:
+                                drawableName = "flag05";
+                                break;
+                            case R.id.imageView7:
+                                drawableName = "flag06";
+                                break;
+                            case R.id.imageView8:
+                                drawableName = "flag07";
+                                break;
+                            case R.id.imageView9:
+                                drawableName = "flag08";
+                                break;
+                            case R.id.imageView10:
+                                drawableName = "flag09";
+                                break;
+                            default:
+                                drawableName = "flag01";
+                                break;
+                        }
+                        int resID = getResources().getIdentifier(drawableName, "drawable", getPackageName());
+                        imageView.setImageResource(resID);
+                    }
+                }
+            });
+    public void OnSetAvatarButton(View view){
+        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+        profileActivityResultLauncher.launch(intent);
     }
 
 }

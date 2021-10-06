@@ -31,23 +31,23 @@ public class ProfileActivity extends AppCompatActivity {
         imageView9 = findViewById(R.id.imageView9);
         imageView10 = findViewById(R.id.imageView10);
 
-        //onClicks
-        imageView2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                //Creating a return Intent to pass to the Main Activity
-                Intent returnIntent = new Intent();
 
-                //Figuring out which image was clicked
-                ImageView selectedImage = (ImageView) view;
+    }
 
-                //Adding details to the return intent
-                returnIntent.putExtra("imageView2", selectedImage.getId());
+    public void SetTeamIcon(View view){
+        //Creating a return Intent to pass to the Main Activity
+        Intent returnIntent = new Intent();
 
-                //Finishing the activity and returning to the main screen
-                finish();
-            }
-        });
+        //Figuring out which image was clicked
+        ImageView selectedImage = (ImageView) view;
+
+        //Adding details to the return intent
+        returnIntent.putExtra("imageID", selectedImage.getId());
+        setResult(RESULT_OK, returnIntent);
+
+        //Finishing the activity and returning to the main screen
+        finish();
+
 
     }
 }
