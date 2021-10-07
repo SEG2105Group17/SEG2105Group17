@@ -1,4 +1,0 @@
-com/example/lab1seg2105/BuildConfig.java
- com.example.lab1seg2105.BuildConfig
-com/example/lab1seg2105/MainActivity.java
- com.example.lab1seg2105.MainActivity
