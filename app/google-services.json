@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "312213353397",
+    "project_id": "gym-manager-ecd38",
+    "storage_bucket": "gym-manager-ecd38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312213353397:android:5667336ad5eb4820cc5ffc",
+        "android_client_info": {
+          "package_name": "com.example.fall2021profejct1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312213353397-brbjl18g7f8tlijnupae6i01t1sta9gc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAArq7J0aKhoDnf0jrCFwF8qLrlNoVXdKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312213353397-brbjl18g7f8tlijnupae6i01t1sta9gc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
