@@ -3,15 +3,15 @@ package com.example.fall2021profejct1;
 public class ClassClass {
     //Attributes
 
-    String name;
-    String description;
-    String date;
-    String time;
-    int difficulty;
-    int capacity;
+    public String name;
+    public String description;
+    public String date;
+    public String time;
+    public int difficulty;
+    public int capacity;
 
     //Constructors
-    ClassClass(String name){
+    public ClassClass(String name){
         //Only given name, set default to others (can edit later using methods)
         this.name = name;
         description = "Not Specified";
@@ -20,7 +20,7 @@ public class ClassClass {
         difficulty = 0;
         int capacity = 50;
     }
-    ClassClass(String name, String description, String date, String time, int difficulty, int capasity){
+    public ClassClass(String name, String description, String date, String time, int difficulty, int capasity){
         this.name = name;
         this.description = description;
         this.date = date;
