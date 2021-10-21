@@ -11,7 +11,7 @@ public class ClassClass {
     public int capacity;
 
     //Constructors
-    public ClassClass(String name){
+    ClassClass(String name){
         //Only given name, set default to others (can edit later using methods)
         this.name = name;
         description = "Not Specified";
@@ -20,7 +20,7 @@ public class ClassClass {
         difficulty = 0;
         int capacity = 50;
     }
-    public ClassClass(String name, String description, String date, String time, int difficulty, int capasity){
+    ClassClass(String name, String description, String date, String time, int difficulty, int capasity){
         this.name = name;
         this.description = description;
         this.date = date;
