@@ -34,6 +34,6 @@ public class MemberClass {
     public void deroll(ClassClass className){
         //Not implemented. Need database.
     }
-        
+
 
 }

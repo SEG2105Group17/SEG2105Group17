@@ -15,4 +15,58 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="30dp"/>
 
+    <Button
+        android:id="@+id/addClassBTN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Add Class"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <Button
+        android:id="@+id/deleteClassBTN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Delete Class"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addClassBTN" />
+
+    <Button
+        android:id="@+id/editClassBTN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Edit Class"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deleteClassBTN" />
+
+    <Button
+        android:id="@+id/deleteInstructorBTN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Delete Instructor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editClassBTN" />
+
+    <Button
+        android:id="@+id/deleteMemberBTN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Delete Member"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deleteInstructorBTN" />
+
+    <TextView
+        android:id="@+id/adminAddClassTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter name of class to add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deleteMemberBTN" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

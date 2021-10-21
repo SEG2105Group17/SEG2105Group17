@@ -61,4 +61,9 @@ public class ClassClass {
         }
         return true;
     }
+
+    //Getters
+    public String getName(){
+        return name;
+    }
 }
