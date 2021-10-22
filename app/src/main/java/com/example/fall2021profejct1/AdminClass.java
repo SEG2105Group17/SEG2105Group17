@@ -25,6 +25,7 @@ public class AdminClass {
         classList[count] = classID;
         count++;
     }
+
     public void editClassName(ClassClass className, String newName){
         className.changeName(newName);
     }
@@ -42,5 +43,14 @@ public class AdminClass {
                 classList[i] = null;
             }
         }
+    }
+
+    //needDataBAse
+    public deleteInstroctor() {
+
+    }
+    //needDataBAse
+    public deleteMemeber() {
+
     }
 }
