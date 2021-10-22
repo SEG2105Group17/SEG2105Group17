@@ -22,4 +22,8 @@ public class AdminClass {
     public void editClassName(ClassClass className, String newName){
         className.changeName(newName);
     }
+
+    public void editClassDesciption(ClassClass className, String newDescription){
+        className.changeDescription(newDescription);
+    }
 }

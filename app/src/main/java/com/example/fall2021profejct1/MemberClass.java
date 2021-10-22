@@ -41,11 +41,11 @@ public class MemberClass {
         }
         throw new NoSuchElementException("No class on that day");
     }
-    public void enroll(ClassClass className) throws {
+    public void enroll(ClassClass className) throws NoSuchElementException{
         //Not implemented. Need database.
 
     }
-    public void deroll(ClassClass className){
+    public void deroll(ClassClass className) throws NoSuchElementException{
         //Not implemented. Need database.
     }
 
