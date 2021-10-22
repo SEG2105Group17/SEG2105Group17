@@ -29,10 +29,10 @@ public class AdminClass {
         className.changeName(newName);
     }
 
-<<<<<<< HEAD
-    public void editClassDesciption(ClassClass className, String newDescription){
+    public void editClassDesciption(ClassClass className, String newDescription) {
         className.changeDescription(newDescription);
-=======
+    }
+
     public void deleteClass(String className){
 
         ClassClass temp = new ClassClass(className);
@@ -42,6 +42,5 @@ public class AdminClass {
                 classList[i] = null;
             }
         }
->>>>>>> FallProfect_v1
     }
 }
