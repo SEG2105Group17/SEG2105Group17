@@ -78,6 +78,7 @@ public class AdminLoginPage extends AppCompatActivity{
                 //delete the class
                 AdminClass deleteClass = new AdminClass();
                 deleteClass.deleteClass(className);
+                //test123456
             }
         });
 
