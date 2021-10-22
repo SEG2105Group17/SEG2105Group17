@@ -3,12 +3,12 @@ package com.example.fall2021profejct1;
 public class ClassClass {
     //Attributes
 
-    String name;
-    String description;
-    String date;
-    String time;
-    int difficulty;
-    int capacity;
+    public String name;
+    public String description;
+    public String date;
+    public String time;
+    public int difficulty;
+    public int capacity;
 
     //Constructors
     ClassClass(String name){
