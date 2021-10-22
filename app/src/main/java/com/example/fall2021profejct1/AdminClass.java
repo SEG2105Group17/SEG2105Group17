@@ -6,8 +6,11 @@ public class AdminClass {
 
     //Any Admin based logic/functionality goes here
     //Attributes
-    String className;
+
     ClassClass classID;
+    ClassClass[] classList= new ClassClass[100];
+
+    int count = 0;
 
     AdminClass(){
 
@@ -16,10 +19,24 @@ public class AdminClass {
 
 
     //Methods
-    public void createClass(ClassClass classID, String className){
+    public void createClass(String className){
         classID = new ClassClass(className);
+
+        classList[count] = classID;
+        count++;
     }
     public void editClassName(ClassClass className, String newName){
         className.changeName(newName);
+    }
+
+    public void deleteClass(String className){
+
+        ClassClass temp = new ClassClass(className);
+
+        for(int i = 0; i < classList.length; i++){
+            if(classList[i] == temp){
+                classList[i] = null;
+            }
+        }
     }
 }
