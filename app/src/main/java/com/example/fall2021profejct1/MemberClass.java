@@ -4,7 +4,7 @@ public class MemberClass {
 
     //Attributes
     public String memberID;
-    public ClassClass enrolled;
+    public LinkedList<ClassClass> enrolled;
 
     MemberClass(String memberID){
         this.memberID = memberID;
@@ -18,15 +18,15 @@ public class MemberClass {
     //Methods
     public void viewClasses(){
         // input array of the main of classes
-        for (int i = 0 ; i < arr.length; i++){
-            print(arr[i]);
+        for (int i = 0 ; i < enrolled.length; i++){
+            print(enrolled[i]);
         }
     }
     public ClassClass searchDay(String day) throws NoSuchElementException{
         // input array of the main of classes
         for (int i = 0 ; i < arr.length; i++) {
-            if (day == arr[i].day) {
-                return arr[i];
+            if (day == enrolled[i].day) {
+                return enrolled[i];
             }
         }
         throw new NoSuchElementException("No class on that day");
@@ -34,9 +34,9 @@ public class MemberClass {
     }
     public ClassClass searchName(String name) throws NoSuchElementException {
         // input array of the main of classes
-        for (int i = 0 ; i < arr.length; i++) {
-            if (name == arr[i].name) {
-                return arr[i];
+        for (int i = 0 ; i < enrolled.length; i++) {
+            if (name == enrolled[i].name) {
+                return enrolled[i];
             }
         }
         throw new NoSuchElementException("No class on that day");
