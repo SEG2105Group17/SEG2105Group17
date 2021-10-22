@@ -57,11 +57,15 @@ public class AdminClass {
 
 
     //needDataBAse
+<<<<<<< Updated upstream
     public deleteInstructor() {
+=======
+    public void deleteInstroctor() {
+>>>>>>> Stashed changes
 
     }
     //needDataBAse
-    public deleteMemeber() {
+    public void deleteMemeber() {
 
     }
 }
