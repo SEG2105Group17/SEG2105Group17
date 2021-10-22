@@ -35,7 +35,7 @@ public class AdminClass {
         className.changeName(newName);
     }
 
-    public void editClassDesciption(ClassClass className, String newDescription) {
+    public void editClassDescription(ClassClass className, String newDescription) {
         className.changeDescription(newDescription);
     }
 
@@ -57,7 +57,7 @@ public class AdminClass {
 
 
     //needDataBAse
-    public deleteInstroctor() {
+    public deleteInstructor() {
 
     }
     //needDataBAse
