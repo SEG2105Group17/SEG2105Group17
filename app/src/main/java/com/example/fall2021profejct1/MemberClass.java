@@ -17,17 +17,31 @@ public class MemberClass {
 
     //Methods
     public void viewClasses(){
-        //Not implemented. Need database.
+        // input array of the main of classes
+        for (int i = 0 ; i < arr.length; i++){
+            print(arr[i]);
+        }
     }
-    public ClassClass searchDay(String day){
-        //Not implemented. Need database.
-        return null;
+    public ClassClass searchDay(String day) throws NoSuchElementException{
+        // input array of the main of classes
+        for (int i = 0 ; i < arr.length; i++) {
+            if (day == arr[i].day) {
+                return arr[i];
+            }
+        }
+        throw new NoSuchElementException("No class on that day");
+
     }
-    public ClassClass searchName(String name){
-        //Not implemented. Need database.
-        return null;
+    public ClassClass searchName(String name) throws NoSuchElementException {
+        // input array of the main of classes
+        for (int i = 0 ; i < arr.length; i++) {
+            if (name == arr[i].name) {
+                return arr[i];
+            }
+        }
+        throw new NoSuchElementException("No class on that day");
     }
-    public void enroll(ClassClass className){
+    public void enroll(ClassClass className) throws {
         //Not implemented. Need database.
 
     }
