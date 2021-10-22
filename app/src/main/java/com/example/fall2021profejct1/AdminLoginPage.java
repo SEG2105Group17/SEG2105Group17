@@ -99,7 +99,7 @@ public class AdminLoginPage extends AppCompatActivity{
 
             adminAddClasstextView.setText("");
 
-            Toast.makeText(this, "Class added", Toast.LENGTH_LONGLONG).show();
+            Toast.makeText(this, "Class added", Toast.LENGTH_LONG).show();
         }
         else{
             Toast.makeText(this, "Enter name of Class", Toast.LENGTH_LONG).show();
