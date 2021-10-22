@@ -41,11 +41,11 @@ public class AdminClass {
 
     public void deleteClass(String className){
 
-        ClassClass temp = new ClassClass(className);
+        //ClassClass temp = new ClassClass(className);
 
-        for(int i = 0; i < classList.length; i++){
-            if(classList[i] == temp){
-                classList[i] = null;
+        for(int i = 0; i < numClass(); i++){
+            if(classList[i].getName() == className){
+                classList.remove(i);
             }
         }
     }
@@ -53,6 +53,8 @@ public class AdminClass {
     public String getUserType(){
         return "Admin";
     }
+
+
 
     //needDataBAse
     public deleteInstroctor() {

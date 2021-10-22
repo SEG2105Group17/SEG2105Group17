@@ -66,4 +66,5 @@ public class ClassClass {
     public String getName(){
         return name;
     }
+
 }
