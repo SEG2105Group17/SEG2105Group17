@@ -1,4 +1,5 @@
 package com.example.fall2021profejct1;
+import java.util.LinkedList;
 
 public class InstructorClass {
     //Attributes
