@@ -39,4 +39,8 @@ public class InstructorClass {
     public void cancel(ClassClass className){
         className = null;
     }
+
+    public String getUserType(){
+        return "Instroctor";
+    }
 }

@@ -49,5 +49,9 @@ public class MemberClass {
         //Not implemented. Need database.
     }
 
+    public String getUserType(){
+        return "Memeber";
+    }
+
 
 }

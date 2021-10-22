@@ -45,6 +45,10 @@ public class AdminClass {
         }
     }
 
+    public String getUserType(){
+        return "Admin";
+    }
+
     //needDataBAse
     public deleteInstroctor() {
 
