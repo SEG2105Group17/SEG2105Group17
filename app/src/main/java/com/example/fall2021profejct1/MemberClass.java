@@ -3,8 +3,8 @@ package com.example.fall2021profejct1;
 public class MemberClass {
 
     //Attributes
-    String memberID;
-    ClassClass enrolled;
+    public String memberID;
+    public ClassClass enrolled;
 
     MemberClass(String memberID){
         this.memberID = memberID;
