@@ -18,13 +18,13 @@ public class MemberClass {
     //Methods
     public void viewClasses(){
         // input array of the main of classes
-        for (int i = 0 ; i < enrolled.length; i++){
+        for (int i = 0 ; i < enrolled.size(); i++){
             print(enrolled[i]);
         }
     }
     public ClassClass searchDay(String day) throws NoSuchElementException{
         // input array of the main of classes
-        for (int i = 0 ; i < arr.length; i++) {
+        for (int i = 0 ; i < arr.size(); i++) {
             if (day == enrolled[i].day) {
                 return enrolled[i];
             }
@@ -34,7 +34,7 @@ public class MemberClass {
     }
     public ClassClass searchName(String name) throws NoSuchElementException {
         // input array of the main of classes
-        for (int i = 0 ; i < enrolled.length; i++) {
+        for (int i = 0 ; i < enrolled.size(); i++) {
             if (name == enrolled[i].name) {
                 return enrolled[i];
             }
