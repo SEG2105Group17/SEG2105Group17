@@ -1,4 +1,5 @@
 package com.example.fall2021profejct1;
+import java.util.LinkedList;
 
 public class AdminClass {
 
@@ -8,7 +9,7 @@ public class AdminClass {
     //Attributes
 
     ClassClass classID;
-    ClassClass[] classList= new ClassClass[100];
+    LinkedList<ClassClass> classList= new LinkedList<ClassClass>();
 
     int count = 0;
 
@@ -19,11 +20,15 @@ public class AdminClass {
 
 
     //Methods
-    public void createClass(String className){
-        classID = new ClassClass(className);
+    public void createClass(String className, String description){
+        classID = new ClassClass(className, description);
 
-        classList[count] = classID;
-        count++;
+        classList.add(classID) ;
+        this.count++;
+    }
+
+    public int numClass(){
+        return this.count;
     }
 
     public void editClassName(ClassClass className, String newName){
