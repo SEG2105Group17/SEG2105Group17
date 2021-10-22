@@ -3,14 +3,14 @@ package com.example.fall2021profejct1;
 public class InstructorClass {
     //Attributes
     String instrctorId;
-    ClassClass[] teaching;
+    LinkedList<ClassClass> teaching= new LinkedList<ClassClass>();
 
     //Constructors
     InstructorClass(String instructorID){
         this.instrctorId = instructorID;
         teaching = null;
     }
-    InstructorClass(String instructorID, ClassClass[] teaching){
+    InstructorClass(String instructorID, LinkedList<ClassClass> teaching){
         this.instrctorId = instructorID;
         this.teaching = teaching;
     }
@@ -20,7 +20,7 @@ public class InstructorClass {
 
     //Array needs to be modified
     public void teachClass(ClassClass classC){
-        teaching[0] = classC;
+        teaching,add(classC);
     }
     public void setDate(ClassClass className, String date){
         className.changeDate(date);
