@@ -35,7 +35,7 @@ public class AdminLoginActivity extends AppCompatActivity {
     //do not add to database...only move on to next activity
     //*and check for correct password
     public void adminLogin(View view){
-        Intent intent = new Intent(this, DatabaseActivity.class);
+        Intent intent = new Intent(this, AdminSelectActivity.class);
         startActivity(intent);
         /*
         String user = usernameBox.getText().toString();

@@ -2,7 +2,7 @@ package com.example.termproject;
 
 public class ClassClass {
     //Attributes
-
+    public int id;
     public String name;
     public String description;
     public String date;
@@ -11,6 +11,17 @@ public class ClassClass {
     public int capacity;
 
     //Constructors
+    public ClassClass(){}
+    public ClassClass(int id, String name, String description){
+        this.id=id;
+        this.name=name;
+        this.description=description;
+    }
+    public ClassClass(String name, String description){
+        this.name=name;
+        this.description=description;
+    }
+
     public ClassClass(String name){
         //Only given name, set default to others (can edit later using methods)
         this.name = name;
@@ -32,6 +43,7 @@ public class ClassClass {
 
 
     //Methods to change constructors
+    public void changeID(int id){this.id=id;}
     public void changeName(String name){
         this.name = name;
     }
