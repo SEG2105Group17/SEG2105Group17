@@ -45,7 +45,7 @@ public class AdminLoginActivity extends AppCompatActivity {
     public void adminLogin(View view){
         Intent intent = new Intent(this, AdminSelectActivity.class);
         startActivity(intent);
-        /*
+    /*
         String user = usernameBox.getText().toString();
         String pass = passwordBox.getText().toString();
         boolean validU = false;
@@ -63,8 +63,8 @@ public class AdminLoginActivity extends AppCompatActivity {
         if(validU == true){
             if(validP == true){
                 //move to next activity
-                Intent intent = new Intent(this, DatabaseActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(this, DatabaseActivity.class);
+                startActivity(intent1);
 
             }else{
                 passwordBox.setText("Incorrect Password");
@@ -73,6 +73,7 @@ public class AdminLoginActivity extends AppCompatActivity {
             usernameBox.setText("Incorrect Username");
         }
         */
+
 
     }
     private void back2(){

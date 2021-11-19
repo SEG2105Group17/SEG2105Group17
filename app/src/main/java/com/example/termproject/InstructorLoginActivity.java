@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.databases.MyDBHandler;
+
 public class InstructorLoginActivity extends AppCompatActivity {
 
     TextView instructorTitle, instructorPassword, instructorUsername;
@@ -49,5 +51,13 @@ public class InstructorLoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, InstructorSelectActivity.class);
             intent.putExtra("username", usernameBox.getText().toString().trim());
         startActivity(intent);
+    }
+
+    public void newInstructor(View view){
+        MyDBHandler dbHandler = new MyDBHandler(this);
+        User user = new User(usernameBox.getText().toString(), "Instructor");
+        dbHandler.addUser(user);
+        usernameBox.setText("");
+        passwordBox.setText("");
     }
 }

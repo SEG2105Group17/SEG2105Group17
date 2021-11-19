@@ -41,9 +41,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:hint="Name"
                 android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:text="Name" />
+                android:minHeight="48dp" />
 
         </LinearLayout>
 
@@ -66,9 +66,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:hint="Password"
                 android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:text="Name" />
+                android:minHeight="48dp" />
         </LinearLayout>
 
         <Button
@@ -76,6 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="newInstructor"
             android:text="Login" />
     </LinearLayout>
 

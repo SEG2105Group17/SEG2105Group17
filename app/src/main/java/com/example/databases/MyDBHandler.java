@@ -39,8 +39,6 @@ public class MyDBHandler extends SQLiteOpenHelper {
 
     public void addUser(User user){
 
-
-
         SQLiteDatabase db = this.getWritableDatabase();
 
         //creating an empty set of values
