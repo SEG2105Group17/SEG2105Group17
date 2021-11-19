@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //Opens Member activity
     public void openActivityInstructor(View view){
-        Intent intent3 = new Intent(this, MemberLoginActivity.class);
+        Intent intent3 = new Intent(this, InstructorLoginActivity.class);
         startActivity(intent3);
 
     }

@@ -3,9 +3,12 @@ package com.example.termproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.databases.MyDBHandler;
 
 public class InstructorLoginActivity extends AppCompatActivity {
 
@@ -26,5 +29,13 @@ public class InstructorLoginActivity extends AppCompatActivity {
 
         usernameBox = (EditText) findViewById(R.id.editUsernameA);
         passwordBox = (EditText) findViewById(R.id.editPasswordA);
+    }
+
+    public void newInstructor(View view){
+        MyDBHandler dbHandler = new MyDBHandler(this);
+        User user = new User(usernameBox.getText().toString(), "Instructor");
+        dbHandler.addUser(user);
+        usernameBox.setText("");
+        passwordBox.setText("");
     }
 }
