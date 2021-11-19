@@ -1,12 +1,12 @@
 package com.example.termproject;
 
 public class ClassClass {
-    //Attributes
-    public int id;
-    public String name;
-    public String description;
-    public String date;
-    public String time;
+    // Attributes
+    public int id = -1;
+    public String name = "";
+    public String description = "";
+    public String date = "";
+    public String time = "";
     public int difficulty = -1;
     public int capacity = -1;
 
@@ -84,6 +84,30 @@ public class ClassClass {
     //Getters
     public String getName(){
         return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public int getId() {
+        return id;
     }
 
 }
