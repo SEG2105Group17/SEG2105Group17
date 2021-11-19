@@ -2,13 +2,13 @@ package com.example.termproject;
 
 public class ClassClass {
     // Attributes
-    public int id;
-    public String name;
-    public String description;
-    public String date;
-    public String time;
-    public int difficulty;
-    public int capacity;
+    public int id = -1;
+    public String name = "";
+    public String description = "";
+    public String date = "";
+    public String time = "";
+    public int difficulty = -1;
+    public int capacity = -1;
 
     // Constructors
     public ClassClass() {
@@ -106,6 +106,10 @@ public class ClassClass {
 
     public int getCapacity() {
         return capacity;
+    }
+
+    public int getId() {
+        return id;
     }
 
 }
