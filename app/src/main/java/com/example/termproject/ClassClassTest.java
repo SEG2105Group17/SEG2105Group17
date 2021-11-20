@@ -158,6 +158,15 @@ public class ClassClassTest {
         assertThat(testFull.checkIfFull(101)).isTrue();
         assertThat(testFull.checkIfFull(98)).isFalse();
         assertThat(testFull.checkIfFull(100)).isFalse();
+
+        ClassClass testFull = new ClassClass("Zen", "Vibes", "1/4/2022", "3:33", 2, 500);
+        assertThat(testFull.checkIfFull(505)).isTrue();
+        assertThat(testFull.checkIfFull(38)).isFalse();
+
+        testFull.changeCapacity(100);
+        assertThat(testFull.checkIfFull(101)).isTrue();
+        assertThat(testFull.checkIfFull(98)).isFalse();
+        assertThat(testFull.checkIfFull(100)).isFalse();
     }
 
 }
