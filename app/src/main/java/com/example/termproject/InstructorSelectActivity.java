@@ -26,7 +26,7 @@ public class InstructorSelectActivity extends AppCompatActivity {
 
         username = getIntent().getExtras().getString("username");
 
-        txtView.setText("Welcome "+ username +"! You are logged in as Admin.");
+        txtView.setText("Welcome "+ username +"! You are logged in as Instructor.");
 
         btnAll.setOnClickListener(new View.OnClickListener(){
             @Override

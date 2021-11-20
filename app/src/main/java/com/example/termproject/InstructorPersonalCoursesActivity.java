@@ -115,6 +115,10 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
             String date =editIDate.getText().toString().trim().toLowerCase();
             String time =editITime.getText().toString().trim();
 
+            if(isTaken(name,date)){
+                return;
+            }
+
             ClassClass newCourse = new ClassClass(name, description, date, time, difficulty,capacity,username);
             dbHandler.add(newCourse);
         }
@@ -165,6 +169,9 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
                     txtIID.setText("Please select item from list");
                     return;
                 }
+                if(isTaken(course.name, editIDate.getText().toString().trim().toLowerCase())){
+                    return;
+                }
                 if(!editIDate.getText().toString().trim().equals("") && isDay(editIDate.getText().toString().trim())){
                     String date=editIDate.getText().toString().trim();
                     dbHandler.editIDate(editID,date);
@@ -209,8 +216,11 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
             Toast.makeText(this,"Not data to show",Toast.LENGTH_SHORT).show();
         }else{
             while(cursor.moveToNext()){
-                listItem.add(cursor.getString(1));
-                listIds.add(cursor.getInt(0));
+                if(cursor.getString(7).equals(username)){
+                    listItem.add(cursor.getString(1));
+                    listIds.add(cursor.getInt(0));
+                }
+
             }
         }
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listItem);
@@ -254,6 +264,22 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
         }
         return flag;
     }
+
+    public boolean isTaken(String name, String day){
+        CourseDetailsDBHandler dbHandler=new CourseDetailsDBHandler(this);
+        boolean flag=false;
+        ClassClass n= dbHandler.find(name,day);
+        if(n!=null && !n.instructor.equals(username)){
+            txtIID.setText("This course is already booked on "+n.date+" by "+n.instructor);
+            flag=true;
+        }
+        else if(n!=null && n.instructor.equals(username)){
+            txtIID.setText("This course is already booked on "+n.date+" by you");
+            flag=true;
+        }
+        return flag;
+    }
+
 
 
 }

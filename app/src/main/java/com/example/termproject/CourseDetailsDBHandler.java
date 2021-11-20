@@ -104,6 +104,30 @@ public class CourseDetailsDBHandler extends SQLiteOpenHelper{
         db.close();
         return course;
     }
+    public ClassClass find(String coursename, String date){
+        SQLiteDatabase db=this.getWritableDatabase();
+        String query="SELECT * FROM " + TABLE_COURSES + " WHERE "+COLUMN_COURSENAME+" = \""
+                + coursename +"\" AND "+COLUMN_DATE+" = \""+date+"\"";
+        Cursor cursor =db.rawQuery(query,null);
+        ClassClass course =new ClassClass();
+
+        if (cursor.moveToFirst()){
+            course.changeID(cursor.getInt(0)); //Integer.parseInt(cursor.getString(0)));
+            course.changeName(cursor.getString(1));
+            course.changeDescription(cursor.getString(2));
+            course.changeDate(cursor.getString(3));
+            course.changeTime(cursor.getString(4));
+            course.changeDifficulty(cursor.getInt(5));
+            course.changeCapacity(cursor.getInt(6));
+            course.changeInstructor(cursor.getString(7));
+
+            cursor.close();
+        }else{
+            course=null;
+        }
+        db.close();
+        return course;
+    }
 
     public boolean delete(int id){
         boolean result =false;
