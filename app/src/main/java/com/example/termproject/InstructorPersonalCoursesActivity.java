@@ -117,6 +117,7 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
         editIDifficulty.setText("");
 
         listItem.clear();
+        listIds.clear();
         viewData();
     }
 
@@ -140,6 +141,7 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
             txtClassInfo.setText("");
             txtIID.setText("");
             listItem.clear();
+            listIds.clear();
             viewData();
 
     }
@@ -187,6 +189,7 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
                 txtIID.setText("");
 
                 listItem.clear();
+                listIds.clear();
                 viewData();
             }
 
