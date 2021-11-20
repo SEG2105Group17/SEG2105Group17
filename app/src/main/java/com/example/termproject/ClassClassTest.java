@@ -60,6 +60,8 @@ public class ClassClassTest {
         assertThat(with6Input.capacity()).isEqualTo(500);
     }
 
+    @Test
+    /** Testing of the setter methods in class class */
     public void testChanges() {
         noInput.changeID(1814);
         with3Input.changeID(1814);
@@ -149,6 +151,8 @@ public class ClassClassTest {
         assertThat(noInput.capacity()).isEqualTo(3);
     }
 
+    @Test
+    /** Testing the method in ClassClass */
     public void testCheckIfFull() {
         ClassClass testFull = new ClassClass("Zen");
         assertThat(testFull.checkIfFull(500)).isTrue();
