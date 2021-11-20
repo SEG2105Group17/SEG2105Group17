@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class AdminSelectActivity extends AppCompatActivity {
     TextView textView;
-    Button btnUserDB, btnCourseDB;
+    Button btnUserDB, btnCourseDB, btnBack1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +19,10 @@ public class AdminSelectActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         btnUserDB = findViewById(R.id.btnUserDB);
         btnCourseDB = findViewById(R.id.btnCourseDB);
+        btnBack1 = findViewById(R.id.btnBack1);
+
         textView.setText("Welcome! You are logged in as Admin.");
+
         btnCourseDB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -32,6 +35,12 @@ public class AdminSelectActivity extends AppCompatActivity {
                 openUserPage();
             }
         });
+        btnBack1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                back1();
+            }
+        });
 
     }
     public void openUserPage(){
@@ -40,6 +49,10 @@ public class AdminSelectActivity extends AppCompatActivity {
     }
     public void openCoursePage(){
         Intent intent= new Intent(this, CourseDBActivity.class);
+        startActivity(intent);
+    }
+    public void back1(){
+        Intent intent= new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent2);
 
     }
-    //Opens Member activity
+    //Opens Instructor activity
     public void openActivityInstructor(View view){
-        Intent intent3 = new Intent(this, MemberLoginActivity.class);
+        Intent intent3 = new Intent(this, InstructorLoginActivity.class);
         startActivity(intent3);
 
     }

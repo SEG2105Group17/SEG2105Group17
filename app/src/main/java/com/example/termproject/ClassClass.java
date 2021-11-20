@@ -7,8 +7,10 @@ public class ClassClass {
     public String description;
     public String date;
     public String time;
-    public int difficulty;
-    public int capacity;
+    public int difficulty = -1;
+    public int capacity = -1;
+
+    public String instructor;
 
     //Constructors
     public ClassClass(){}
@@ -31,16 +33,19 @@ public class ClassClass {
         difficulty = 0;
         int capacity = 50;
     }
-    public ClassClass(String name, String description, String date, String time, int difficulty, int capasity){
+    public ClassClass(String name, String description, String date, String time, int difficulty, int capasity,String instructor){
         this.name = name;
         this.description = description;
         this.date = date;
         this.time = time;
         this.difficulty = difficulty;
         this.capacity = capasity;
+        this.instructor=instructor;
     }
 
-
+    public boolean isCourse() {
+        return date == null && time == null && difficulty == -1 && capacity == -1 && instructor == null;
+    }
 
     //Methods to change constructors
     public void changeID(int id){this.id=id;}
@@ -62,6 +67,8 @@ public class ClassClass {
     public void changeCapacity(int capacity){
         this.capacity = capacity;
     }
+
+    public void changeInstructor(String instructor){this.instructor=instructor;};
 
 
     //Methods

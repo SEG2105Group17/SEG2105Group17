@@ -2,6 +2,7 @@ package com.example.termproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +19,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class CourseDBActivity extends AppCompatActivity {
-    Button btnAdd,btnFind,btnDelete;
-    TextView txtID2;
+    Button btnAdd,btnFind,btnDelete, btnBack;
+    TextView txtID2, txt1;
     EditText editName, editDescription;
     ListView list;
 
@@ -33,7 +34,9 @@ public class CourseDBActivity extends AppCompatActivity {
         btnAdd=findViewById(R.id.btnAdd);
         btnFind=findViewById(R.id.btnFind);
         btnDelete=findViewById(R.id.btnDelete);
+        btnBack=findViewById(R.id.btnBack);
         txtID2=findViewById(R.id.txtID2);
+        txt1=findViewById(R.id.txt1);
         editName=findViewById(R.id.editName);
         editDescription=findViewById(R.id.editDescription);
         list=findViewById(R.id.list);
@@ -46,8 +49,19 @@ public class CourseDBActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
                 String text= list.getItemAtPosition(i).toString();
                 Toast.makeText(CourseDBActivity.this,""+text,Toast.LENGTH_SHORT).show();
+                txt1.setText("Description: "+dbHandler.find(text).description);
             }
         });
+        btnBack.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                back();
+            }
+        });
+    }
+    private void back(){
+        Intent intent= new Intent(this, AdminSelectActivity.class);
+        startActivity(intent);
     }
     public void newProduct(View view){
         CourseDBHandler dbHandler =new CourseDBHandler(this);
@@ -106,4 +120,5 @@ public class CourseDBActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listItem);
         list.setAdapter(adapter);
     }
+
 }

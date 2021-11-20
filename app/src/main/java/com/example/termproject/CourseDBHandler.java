@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class CourseDBHandler extends SQLiteOpenHelper {
 
@@ -14,10 +15,7 @@ public class CourseDBHandler extends SQLiteOpenHelper {
     private static final String COLUMN_ID="_id";
     private static final String COLUMN_COURSENAME="coursename";
     private static final String COLUMN_DESCRIPTION="description";
-    private static final String COLUMN_DATE="date";
-    private static final String COLUMN_TIME="time";
-    private static final String COLUMN_DIFFICULTY="difficulty";
-    private static final String COLUMN_CAPACITY="capacity";
+
 
     public CourseDBHandler(Context context){
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
@@ -27,9 +25,7 @@ public class CourseDBHandler extends SQLiteOpenHelper {
         String CREATE_COURSES_TABLE ="CREATE TABLE " + TABLE_COURSES
                 +"("+COLUMN_ID+" INTEGER PRIMARY KEY,"
                 + COLUMN_COURSENAME+" TEXT,"
-                + COLUMN_DESCRIPTION+" TEXT,"+ COLUMN_DATE +" TEXT, "+
-                COLUMN_TIME +" TEXT," + COLUMN_DIFFICULTY +" INTEGER,"+
-                COLUMN_CAPACITY+" INTEGER"+ ")";
+                + COLUMN_DESCRIPTION+" TEXT"+ ")";
         db.execSQL(CREATE_COURSES_TABLE);
     }
     @Override
@@ -42,10 +38,7 @@ public class CourseDBHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(COLUMN_COURSENAME,course.name);
         values.put(COLUMN_DESCRIPTION,course.description);
-        values.put(COLUMN_DATE,course.date);
-        values.put(COLUMN_TIME,course.time);
-        values.put(COLUMN_DIFFICULTY,course.difficulty);
-        values.put(COLUMN_CAPACITY,course.capacity);
+
 
         db.insert(TABLE_COURSES,null,values);
         db.close();
@@ -58,7 +51,7 @@ public class CourseDBHandler extends SQLiteOpenHelper {
         ClassClass course =new ClassClass();
 
         if (cursor.moveToFirst()){
-            course.changeID(Integer.parseInt(cursor.getString(0)));
+            course.changeID(cursor.getInt(0)); //Integer.parseInt(cursor.getString(0)));
             course.changeName(cursor.getString(1));
             course.changeDescription(cursor.getString(2));
             cursor.close();

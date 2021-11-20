@@ -2,7 +2,9 @@ package com.example.termproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -10,7 +12,7 @@ import android.widget.TextView;
 public class InstructorLoginActivity extends AppCompatActivity {
 
     TextView instructorTitle, instructorPassword, instructorUsername;
-    Button iBTN;
+    Button iBTN, btnBack3;
     EditText usernameBox, passwordBox;
 
     @Override
@@ -23,8 +25,29 @@ public class InstructorLoginActivity extends AppCompatActivity {
         instructorPassword = (TextView) findViewById(R.id.adminPassword);
 
         iBTN = (Button) findViewById(R.id.adminLoginBTN);
+        btnBack3 = (Button) findViewById(R.id.btnBack3);
 
         usernameBox = (EditText) findViewById(R.id.editUsernameA);
         passwordBox = (EditText) findViewById(R.id.editPasswordA);
+
+        btnBack3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                back3();
+            }
+        });
+        iBTN.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){ adminLogin(); }
+        });
+    }
+    private void back3(){
+        Intent intent= new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+    public void adminLogin() {
+        Intent intent = new Intent(this, InstructorSelectActivity.class);
+            intent.putExtra("username", usernameBox.getText().toString().trim());
+        startActivity(intent);
     }
 }

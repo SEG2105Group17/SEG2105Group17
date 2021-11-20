@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class AdminLoginActivity extends AppCompatActivity {
 
     TextView adminTitle, adminPassword, adminUsername;
-    Button aBTN;
+    Button aBTN,btnBack2;
     EditText usernameBox, passwordBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +24,17 @@ public class AdminLoginActivity extends AppCompatActivity {
         adminPassword = (TextView) findViewById(R.id.adminPassword);
 
         aBTN = (Button) findViewById(R.id.adminLoginBTN);
+        btnBack2 = (Button) findViewById(R.id.btnBack2);
 
         usernameBox = (EditText) findViewById(R.id.editUsernameA);
         passwordBox = (EditText) findViewById(R.id.editPasswordA);
+
+        btnBack2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                back2();
+            }
+        });
     }
 
 
@@ -66,5 +74,9 @@ public class AdminLoginActivity extends AppCompatActivity {
         }
         */
 
+    }
+    private void back2(){
+        Intent intent= new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
