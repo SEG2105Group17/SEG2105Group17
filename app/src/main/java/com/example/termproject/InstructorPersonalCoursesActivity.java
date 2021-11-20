@@ -94,9 +94,13 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
                 txtIID.setText("Course not offered by gym");
                 return;
             }
+
             String description= check.find(name).description;
             int capacity, difficulty;
             try {
+                if(!isValidCapacity(Integer.parseInt(editICapacity.getText().toString().trim()))||!isValidDifficulty(Integer.parseInt(editIDifficulty.getText().toString().trim()))){
+                    return;
+                }
                 capacity = Integer.parseInt(editICapacity.getText().toString().trim());
                 difficulty =Integer.parseInt(editIDifficulty.getText().toString().trim());
             }
@@ -161,7 +165,7 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
                     txtIID.setText("Please select item from list");
                     return;
                 }
-                if(!editIDate.getText().toString().trim().equals("")){
+                if(!editIDate.getText().toString().trim().equals("") && isDay(editIDate.getText().toString().trim())){
                     String date=editIDate.getText().toString().trim();
                     dbHandler.editIDate(editID,date);
                 }
@@ -169,14 +173,14 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
                     String hours=editITime.getText().toString().trim();
                     dbHandler.editITime(editID,hours);
                 }
-                if(!editICapacity.getText().toString().trim().equals("")) {
+                if(!editICapacity.getText().toString().trim().equals("") && isValidCapacity(Integer.parseInt(editICapacity.getText().toString().trim()))) {
                     try {
                         int capacity = Integer.parseInt(editICapacity.getText().toString().trim());
                         dbHandler.editICapacity(editID, capacity);
                     } catch (NumberFormatException e) {
                     }
                 }
-                if(!editIDifficulty.getText().toString().trim().equals("")){
+                if(!editIDifficulty.getText().toString().trim().equals("") && isValidDifficulty(Integer.parseInt(editIDifficulty.getText().toString().trim()))){
                     try{
                             int difficulty =Integer.parseInt(editIDifficulty.getText().toString().trim());
                             dbHandler.editIDifficulty(editID,difficulty);
@@ -220,13 +224,33 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //for newProduct
+    //for newProduct and edit
     public boolean isDay(String day){
         String[] days = {"monday","tuesday","wednesday","thursday","friday","saturday","sunday"};
         boolean flag =false;
         day = day.trim().toLowerCase();
         for (int i=0;i<days.length;i++){
             if (day!=null&&day.equals(days[i])){ flag=true;}
+        }
+        return flag;
+    }
+    public boolean isValidCapacity(int i){
+        boolean flag=true;
+        if (i<=0){
+            flag=false;
+            txtIID.setText("Must have a capacity of at least one");
+        }
+        else if (i>50){
+            flag=false;
+            txtIID.setText("Max capacity of 50 people per course");
+        }
+        return flag;
+    }
+    public boolean isValidDifficulty(int i){
+        boolean flag=true;
+        if (i<=0 || i>5){
+            flag=false;
+            txtIID.setText("Please select a difficulty level between 1(easy) and 5(expert)");
         }
         return flag;
     }
