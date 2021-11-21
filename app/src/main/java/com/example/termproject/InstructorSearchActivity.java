@@ -85,6 +85,7 @@ public class InstructorSearchActivity extends AppCompatActivity {
                 DB1=false;
                 DB2=true;
                 txtlist.setText("Class types offered by the gym:");
+                txtInfo.setText("Select for class details");
                 viewData();
             }
         });
@@ -94,6 +95,7 @@ public class InstructorSearchActivity extends AppCompatActivity {
                 DB1=true;
                 DB2=false;
                 txtlist.setText("Classes booked by instructors:");
+                txtInfo.setText("Select for class details");
                 viewData();
             }
         });
@@ -107,6 +109,7 @@ public class InstructorSearchActivity extends AppCompatActivity {
 
     }
     public void searchClasses(View view){
+
         String instructorName = editInstructor.getText().toString();
         String className = editCourse.getText().toString();
         CourseDetailsDBHandler search = new CourseDetailsDBHandler(this);
@@ -114,36 +117,39 @@ public class InstructorSearchActivity extends AppCompatActivity {
         listItem.clear();
         listIds.clear();
 
-        if(cursor.getCount() == 0){
-            Toast.makeText(InstructorSearchActivity.this,"No Classes Exist",Toast.LENGTH_SHORT).show();
-        } else {
-            if(!className.equals("") && !instructorName.equals("")){
-                while(cursor.moveToNext()){
-                    if(cursor.getString(1).equals(className) && cursor.getString(7).equals(instructorName)){
-                        listItem.add(cursor.getString(1));
-                        listIds.add(cursor.getInt(0));
+        if(DB1){
+            if(cursor.getCount() == 0){
+                Toast.makeText(InstructorSearchActivity.this,"No Classes Exist",Toast.LENGTH_SHORT).show();
+            } else {
+                if(!className.equals("") && !instructorName.equals("")){
+                    while(cursor.moveToNext()){
+                        if(cursor.getString(1).equals(className) && cursor.getString(7).equals(instructorName)){
+                            listItem.add(cursor.getString(1));
+                            listIds.add(cursor.getInt(0));
+                        }
                     }
-                }
 
-            } else if(!className.equals("")) {
-                while(cursor.moveToNext()){
-                    if(cursor.getString(1).equals(className)){
-                        listItem.add(cursor.getString(1));
-                        listIds.add(cursor.getInt(0));
+                } else if(!className.equals("")) {
+                    while(cursor.moveToNext()){
+                        if(cursor.getString(1).equals(className)){
+                            listItem.add(cursor.getString(1));
+                            listIds.add(cursor.getInt(0));
+                        }
                     }
-                }
-            } else if(!instructorName.equals("")){
-                while(cursor.moveToNext()) {
-                    if (cursor.getString(7).equals(instructorName)) {
-                        listItem.add(cursor.getString(1));
-                        listIds.add(cursor.getInt(0));
+                } else if(!instructorName.equals("")){
+                    while(cursor.moveToNext()) {
+                        if (cursor.getString(7).equals(instructorName)) {
+                            listItem.add(cursor.getString(1));
+                            listIds.add(cursor.getInt(0));
+                        }
                     }
                 }
             }
-        }
 
-        adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listItem);
-        list.setAdapter(adapter);
+            adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listItem);
+            list.setAdapter(adapter);
+        }else if (DB2){txtInfo.setText("Please select booked to search database");}
+
     }
 
 
