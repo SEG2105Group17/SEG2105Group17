@@ -31,7 +31,7 @@ public class InstructorSelectActivity extends AppCompatActivity {
         btnAll.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                openAll();
+                openClassSearch();
             }
         });
         btnPersonal.setOnClickListener(new View.OnClickListener(){
@@ -53,8 +53,10 @@ public class InstructorSelectActivity extends AppCompatActivity {
             intent.putExtra("username", username);
         startActivity(intent);
     }
-    public void openAll(){            ///TODO
-
+    public void openClassSearch(){
+        Intent intent= new Intent(this, InstructorSearchActivity.class);
+            intent.putExtra("username", username);
+        startActivity(intent);
     }
     public void back6(){
         Intent intent= new Intent(this, MainActivity.class);

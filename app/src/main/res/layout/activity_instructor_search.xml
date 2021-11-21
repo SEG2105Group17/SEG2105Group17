@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructorSearchActivity">
+
+    <Button
+        android:id="@+id/btnBack7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="2dp"
+        android:text="Back"
+        android:onClick="backSI"
+        app:layout_constraintEnd_toStartOf="@+id/btnSearch"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtICourseSearch" />
+
+    <EditText
+        android:id="@+id/txtICourseSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/txtCourseSearch"
+        app:layout_constraintTop_toBottomOf="@+id/editInstructorSearch"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txtInstructorSearch"
+        android:layout_width="178dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="26dp"
+        android:text="Search by Instructor Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCourseSearch"
+        android:layout_width="178dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="12dp"
+        android:text="Search by Search Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInstructorSearch" />
+
+    <ListView
+        android:id="@+id/listIAllCourse"
+        android:layout_width="411dp"
+        android:layout_height="264dp"
+        android:layout_marginTop="15dp"
+        android:background="#E3F3EF"
+        android:cacheColorHint="#99ECEC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSearch" />
+
+    <EditText
+        android:id="@+id/editInstructorSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/txtInstructorSearch"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txtICourseSearchInfo"
+        android:layout_width="413dp"
+        android:layout_height="170dp"
+        android:background="#C7DEE1"
+        android:text="Select for class details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listIAllCourse" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="16dp"
+        android:text="Search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtICourseSearch" />
+</androidx.constraintlayout.widget.ConstraintLayout>
