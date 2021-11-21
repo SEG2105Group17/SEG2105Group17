@@ -19,13 +19,20 @@ public class ClassClass {
         this.name=name;
         this.description=description;
     }
-    public ClassClass(String name, String description){
-        this.name=name;
-        this.description=description;
+
+    public ClassClass(int id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
     }
 
-    public ClassClass(String name){
-        //Only given name, set default to others (can edit later using methods)
+    public ClassClass(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    public ClassClass(String name) {
+        // Only given name, set default to others (can edit later using methods)
         this.name = name;
         description = "Not Specified";
         date = "Not Specified";
@@ -52,19 +59,24 @@ public class ClassClass {
     public void changeName(String name){
         this.name = name;
     }
-    public void changeDescription(String description){
+
+    public void changeDescription(String description) {
         this.description = description;
     }
-    public void changeDate(String date){
+
+    public void changeDate(String date) {
         this.date = date;
     }
-    public void changeTime(String time){
+
+    public void changeTime(String time) {
         this.time = time;
     }
-    public void changeDifficulty(int difficulty){
+
+    public void changeDifficulty(int difficulty) {
         this.difficulty = difficulty;
     }
-    public void changeCapacity(int capacity){
+
+    public void changeCapacity(int capacity) {
         this.capacity = capacity;
     }
 
@@ -81,8 +93,8 @@ public class ClassClass {
         return true;
     }
 
-    //Getters
-    public String getName(){
+    // Getters
+    public String getName() {
         return name;
     }
 

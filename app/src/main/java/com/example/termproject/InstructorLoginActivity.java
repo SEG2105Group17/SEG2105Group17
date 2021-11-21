@@ -60,4 +60,12 @@ public class InstructorLoginActivity extends AppCompatActivity {
         usernameBox.setText("");
         passwordBox.setText("");
     }
+
+    public void newInstructor(View view){
+        MyDBHandler dbHandler = new MyDBHandler(this);
+        User user = new User(usernameBox.getText().toString(), "Instructor");
+        dbHandler.addUser(user);
+        usernameBox.setText("");
+        passwordBox.setText("");
+    }
 }
