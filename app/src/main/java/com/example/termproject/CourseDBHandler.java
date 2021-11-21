@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 public class CourseDBHandler extends SQLiteOpenHelper {
 
@@ -84,6 +83,22 @@ public class CourseDBHandler extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query,null);
         return cursor;
     }
+    public ClassClass find(int id){
+        SQLiteDatabase db=this.getWritableDatabase();
+        String query="SELECT * FROM " + TABLE_COURSES + " WHERE "+COLUMN_ID+" = \"" + id +"\"";
+        Cursor cursor =db.rawQuery(query,null);
+        ClassClass course =new ClassClass();
 
+        if (cursor.moveToFirst()){
+            course.changeID(cursor.getInt(0)); //Integer.parseInt(cursor.getString(0)));
+            course.changeName(cursor.getString(1));
+            course.changeDescription(cursor.getString(2));
+            cursor.close();
+        }else{
+            course=null;
+        }
+        db.close();
+        return course;
+    }
 
 }

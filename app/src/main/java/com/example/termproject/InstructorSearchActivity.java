@@ -1,7 +1,5 @@
 package com.example.termproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -14,19 +12,22 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 //currently listview displays all classes
 ///TODO: implement search button:(so list view results can narrowed using editInstructor/editSearch or both)
 public class InstructorSearchActivity extends AppCompatActivity {
-    TextView txtInfo;
+    TextView txtInfo, txtlist;
     ListView list;
     EditText editInstructor, editCourse;
-    Button btnBack,btnSearch;
+    Button btnBack,btnSearch, btnDB1, btnDB2;
 
     ArrayList<Integer> listIds;
     ArrayList<String> listItem;
     ArrayAdapter adapter;
     String username;
+    boolean DB1,DB2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +39,18 @@ public class InstructorSearchActivity extends AppCompatActivity {
         editCourse=findViewById(R.id.txtICourseSearch);
         btnBack=findViewById(R.id.btnBack7);
         btnSearch=findViewById(R.id.btnSearch);
+        btnDB1=findViewById(R.id.btnDB1);
+        btnDB2=findViewById(R.id.btnDB2);
+        txtlist=findViewById(R.id.txtlist);
 
         username = getIntent().getExtras().getString("username");
         CourseDetailsDBHandler dbHandler=new CourseDetailsDBHandler(this);
         CourseDBHandler check= new CourseDBHandler(this);
         listItem = new ArrayList<>();
         listIds = new ArrayList<>();
+
+        DB1=true;
+        DB2=false;
 
         viewData();
 
@@ -53,13 +60,41 @@ public class InstructorSearchActivity extends AppCompatActivity {
                 String text= list.getItemAtPosition(i).toString();
                 Toast.makeText(InstructorSearchActivity.this,""+text,Toast.LENGTH_SHORT).show();
 
-                int id = listIds.get(i);
-                ClassClass course = dbHandler.find(id);
+                if(DB1){
+                    int id = listIds.get(i);
+                    ClassClass course = dbHandler.find(id);
 
-                txtInfo.setText("Course: "+course.name +"\nDescription: "+course.description +"\nInstructor: "+course.instructor+
-                        "\nDate: "+course.date +"\nTime: "+course.time +
-                        "\nDifficulty: "+course.difficulty +"\nCapacity: "+course.capacity+ "\nID: "+id);
+                    txtInfo.setText("Course: "+course.name +"\nDescription: "+course.description +"\nInstructor: "+course.instructor+
+                            "\nDate: "+course.date +"\nTime: "+course.time +
+                            "\nDifficulty: "+course.difficulty +"\nCapacity: "+course.capacity+ "\nID: "+id);
 
+                }
+                else if(DB2){
+                    int id = listIds.get(i);
+                    ClassClass course = check.find(id);
+
+                    txtInfo.setText("Course: "+course.name +"\nDescription: "+course.description + "\nID: "+id);
+
+                }
+
+            }
+        });
+        btnDB1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                DB1=false;
+                DB2=true;
+                txtlist.setText("Class types offered by the gym:");
+                viewData();
+            }
+        });
+        btnDB2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                DB1=true;
+                DB2=false;
+                txtlist.setText("Classes booked by instructors:");
+                viewData();
             }
         });
 
@@ -68,15 +103,33 @@ public class InstructorSearchActivity extends AppCompatActivity {
 
     private void viewData(){
         CourseDetailsDBHandler dbHandler= new CourseDetailsDBHandler(this);
-        Cursor cursor= dbHandler.viewData();
+        CourseDBHandler check=new CourseDBHandler(this);
+        listItem.clear();
+        listIds.clear();
 
-        if(cursor.getCount()==0){
-            Toast.makeText(this,"Not data to show",Toast.LENGTH_SHORT).show();
-        }else{
-            while(cursor.moveToNext()){
+        if(DB1){
+
+            Cursor cursor= dbHandler.viewData();
+            if(cursor.getCount()==0){
+                Toast.makeText(this,"Not data to show",Toast.LENGTH_SHORT).show();
+            }else{
+                while(cursor.moveToNext()){
                     listItem.add(cursor.getString(1));
                     listIds.add(cursor.getInt(0));
 
+                }
+            }
+        }
+        else if(DB2){
+            Cursor cursor= check.viewData();
+            if(cursor.getCount()==0){
+                Toast.makeText(this,"Not data to show",Toast.LENGTH_SHORT).show();
+            }else{
+                while(cursor.moveToNext()){
+                    listItem.add(cursor.getString(1));
+                    listIds.add(cursor.getInt(0));
+
+                }
             }
         }
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listItem);

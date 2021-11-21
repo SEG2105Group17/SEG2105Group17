@@ -7,14 +7,26 @@
     tools:context=".InstructorSearchActivity">
 
     <Button
+        android:id="@+id/btnDB2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="15dp"
+        android:text="Booked"
+        app:layout_constraintBottom_toTopOf="@+id/listIAllCourse"
+        app:layout_constraintEnd_toStartOf="@+id/btnBack7"
+        app:layout_constraintStart_toEndOf="@+id/btnDB1" />
+
+    <Button
         android:id="@+id/btnBack7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="212dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="2dp"
-        android:text="Back"
         android:onClick="backSI"
+        android:text="Back"
         app:layout_constraintEnd_toStartOf="@+id/btnSearch"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,9 +98,26 @@
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:text="Search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtICourseSearch" />
+
+    <Button
+        android:id="@+id/btnDB1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="Types"
+        app:layout_constraintBottom_toTopOf="@+id/listIAllCourse"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtlist"
+        android:layout_width="405dp"
+        android:layout_height="17dp"
+        android:text="Classes booked by instructors:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDB1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
