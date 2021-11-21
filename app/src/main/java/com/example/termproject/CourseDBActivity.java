@@ -1,7 +1,5 @@
 package com.example.termproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -14,7 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -71,8 +69,8 @@ public class CourseDBActivity extends AppCompatActivity {
 
         }
         else{
-            String description =editDescription.getText().toString();
-            ClassClass course = new ClassClass(editName.getText().toString(), description);
+            String description =editDescription.getText().toString().trim();
+            ClassClass course = new ClassClass(editName.getText().toString().trim().toLowerCase(), description);
             dbHandler.add(course);
         }
         editName.setText("");

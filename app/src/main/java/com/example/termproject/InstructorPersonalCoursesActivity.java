@@ -1,7 +1,5 @@
 package com.example.termproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -14,11 +12,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import androidx.appcompat.app.AppCompatActivity;
 
-//delete crashes when new item selected after used/
-// error with txtClassInfo list on click display when edit used (back and return seems to make it better)
+import java.util.ArrayList;
+
 public class InstructorPersonalCoursesActivity extends AppCompatActivity {
     Button btnIAdd, btnIDelete, btnIEdit, btnIBack;
     TextView txtIID, txtClassInfo;
@@ -82,14 +79,14 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
         CourseDetailsDBHandler dbHandler =new CourseDetailsDBHandler(this);
         CourseDBHandler check =new CourseDBHandler(this);
 
-        if(editIName.getText().toString().equals("") || editICapacity.getText().toString().equals("") ||
-                editIDate.getText().toString().equals("") || editITime.getText().toString().equals("") ||
-                    editIDifficulty.getText().toString().equals("")){
+        if(editIName.getText().toString().trim().equals("") || editICapacity.getText().toString().trim().equals("") ||
+                editIDate.getText().toString().trim().equals("") || editITime.getText().toString().trim().equals("") ||
+                    editIDifficulty.getText().toString().trim().equals("")){
 
             txtIID.setText("Enter valid price/product name");
         }
         else{
-            String name =editIName.getText().toString().trim();
+            String name =editIName.getText().toString().trim().toLowerCase();
             if(check.find(name)==null){
                 txtIID.setText("Course not offered by gym");
                 return;
@@ -112,6 +109,10 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
                 txtIID.setText("Please enter valid day of week for date");
                 return;
             }
+            if(!isValidTime(editITime.getText().toString().trim())){
+                return;
+            }
+
             String date =editIDate.getText().toString().trim().toLowerCase();
             String time =editITime.getText().toString().trim();
 
@@ -127,6 +128,7 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
         editITime.setText("");
         editICapacity.setText("");
         editIDifficulty.setText("");
+        txtIID.setText("Select for ID");
 
         listItem.clear();
         listIds.clear();
@@ -151,7 +153,7 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
             editICapacity.setText("");
             editIDifficulty.setText("");
             txtClassInfo.setText("");
-            txtIID.setText("");
+            txtIID.setText("Select for ID");
             listItem.clear();
             listIds.clear();
             viewData();
@@ -176,7 +178,7 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
                     String date=editIDate.getText().toString().trim();
                     dbHandler.editIDate(editID,date);
                 }
-                if(!editITime.getText().toString().trim().equals("")){
+                if(!editITime.getText().toString().trim().equals("") && isValidTime(editITime.getText().toString().trim())){
                     String hours=editITime.getText().toString().trim();
                     dbHandler.editITime(editID,hours);
                 }
@@ -201,7 +203,7 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
                 editICapacity.setText("");
                 editIDifficulty.setText("");
                 txtClassInfo.setText("");
-                txtIID.setText("");
+                txtIID.setText("Select for ID");
 
                 listItem.clear();
                 listIds.clear();
@@ -276,6 +278,27 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
         else if(n!=null && n.instructor.equals(username)){
             txtIID.setText("This course is already booked on "+n.date+" by you");
             flag=true;
+        }
+        return flag;
+    }
+    public boolean isValidTime(String time){
+        boolean flag=false;
+        String[] parts;
+        int hour,minute;
+        if(time.contains(":")){
+            parts=time.split(":");
+            try{
+                hour=Integer.parseInt(parts[0]);
+                minute=Integer.parseInt(parts[1]);
+                if((hour<=23 &&hour>=0)&&(minute<=59&&minute>=0)){
+                    flag=true;
+                }
+            }catch(NumberFormatException e){
+                txtIID.setText("Please enter valid time format, ie. '2:00' or '16:00'");
+            }
+        }
+        else{
+            txtIID.setText("Please enter valid time format, ie. '2:00' or '16:00'");
         }
         return flag;
     }
