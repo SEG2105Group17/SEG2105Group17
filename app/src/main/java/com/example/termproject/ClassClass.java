@@ -12,12 +12,8 @@ public class ClassClass {
 
     public String instructor;
 
-    //Constructors
-    public ClassClass(){}
-    public ClassClass(int id, String name, String description){
-        this.id=id;
-        this.name=name;
-        this.description=description;
+    // Constructors
+    public ClassClass() {
     }
 
     public ClassClass(int id, String name, String description) {
@@ -40,23 +36,28 @@ public class ClassClass {
         difficulty = 0;
         int capacity = 50;
     }
-    public ClassClass(String name, String description, String date, String time, int difficulty, int capasity,String instructor){
+
+    public ClassClass(String name, String description, String date, String time, int difficulty, int capasity,
+            String instructor) {
         this.name = name;
         this.description = description;
         this.date = date;
         this.time = time;
         this.difficulty = difficulty;
         this.capacity = capasity;
-        this.instructor=instructor;
+        this.instructor = instructor;
     }
 
     public boolean isCourse() {
         return date == null && time == null && difficulty == -1 && capacity == -1 && instructor == null;
     }
 
-    //Methods to change constructors
-    public void changeID(int id){this.id=id;}
-    public void changeName(String name){
+    // Methods to change constructors
+    public void changeID(int id) {
+        this.id = id;
+    }
+
+    public void changeName(String name) {
         this.name = name;
     }
 
@@ -80,14 +81,15 @@ public class ClassClass {
         this.capacity = capacity;
     }
 
-    public void changeInstructor(String instructor){this.instructor=instructor;};
+    public void changeInstructor(String instructor) {
+        this.instructor = instructor;
+    };
 
-
-    //Methods
-    //@param int people, amount of people in the class
-    //@return, true if room, false if full
-    public boolean checkIfFull(int people){
-        if(people >= capacity){
+    // Methods
+    // @param int people, amount of people in the class
+    // @return, true if room, false if full
+    public boolean checkIfFull(int people) {
+        if (people >= capacity) {
             return false;
         }
         return true;
