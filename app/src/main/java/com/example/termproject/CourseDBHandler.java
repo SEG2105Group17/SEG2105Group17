@@ -61,10 +61,10 @@ public class CourseDBHandler extends SQLiteOpenHelper {
         return course;
     }
 
-    public boolean delete(String coursename){
+    public boolean delete(int id){
         boolean result =false;
         SQLiteDatabase db = this.getWritableDatabase();
-        String query="SELECT * FROM " + TABLE_COURSES + " WHERE "+COLUMN_COURSENAME+" = \"" + coursename +"\"";
+        String query="SELECT * FROM " + TABLE_COURSES + " WHERE "+COLUMN_ID+" = \"" + id +"\"";
         Cursor cursor =db.rawQuery(query,null);
 
         if(cursor.moveToFirst()){
@@ -100,5 +100,20 @@ public class CourseDBHandler extends SQLiteOpenHelper {
         db.close();
         return course;
     }
+    public void editDescription(int id, String description){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String strSQL = "UPDATE "+TABLE_COURSES+" SET "+COLUMN_DESCRIPTION+" = \""+
+                description+ "\" WHERE "+ COLUMN_ID +" = \""+ id+"\"";
 
+        db.execSQL(strSQL);
+        db.close();
+    }
+    public void editName(int id, String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String strSQL = "UPDATE "+TABLE_COURSES+" SET "+COLUMN_COURSENAME+" = \""+
+                name+ "\" WHERE "+ COLUMN_ID +" = \""+ id+"\"";
+
+        db.execSQL(strSQL);
+        db.close();
+    }
 }
