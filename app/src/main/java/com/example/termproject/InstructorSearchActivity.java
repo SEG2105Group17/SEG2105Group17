@@ -98,6 +98,52 @@ public class InstructorSearchActivity extends AppCompatActivity {
             }
         });
 
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchClasses(view);
+            }
+        });
+
+    }
+    public void searchClasses(View view){
+        String instructorName = editInstructor.getText().toString();
+        String className = editCourse.getText().toString();
+        CourseDetailsDBHandler search = new CourseDetailsDBHandler(this);
+        Cursor cursor= search.viewData();
+        listItem.clear();
+        listIds.clear();
+
+        if(cursor.getCount() == 0){
+            Toast.makeText(InstructorSearchActivity.this,"No Classes Exist",Toast.LENGTH_SHORT).show();
+        } else {
+            if(!className.equals("") && !instructorName.equals("")){
+                while(cursor.moveToNext()){
+                    if(cursor.getString(1).equals(className) && cursor.getString(7).equals(instructorName)){
+                        listItem.add(cursor.getString(1));
+                        listIds.add(cursor.getInt(0));
+                    }
+                }
+
+            } else if(!className.equals("")) {
+                while(cursor.moveToNext()){
+                    if(cursor.getString(1).equals(className)){
+                        listItem.add(cursor.getString(1));
+                        listIds.add(cursor.getInt(0));
+                    }
+                }
+            } else if(!instructorName.equals("")){
+                while(cursor.moveToNext()) {
+                    if (cursor.getString(7).equals(instructorName)) {
+                        listItem.add(cursor.getString(1));
+                        listIds.add(cursor.getInt(0));
+                    }
+                }
+            }
+        }
+
+        adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listItem);
+        list.setAdapter(adapter);
     }
 
 
