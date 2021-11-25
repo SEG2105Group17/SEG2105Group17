@@ -11,30 +11,29 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/*
-@author Brett, Daniel, Diyar, Leo, Natasha
-@version 2.0
-@since version 1.0
+/**
+ * Performs basic calculator functions (add/ subtract/ multiply/ divide) for integer and decimal numbers
+ *
+ *@author Brett, Daniel, Diyar, Leo, Natasha
+ *@version 2.0 (25/11/21)
+ *@since version 1.0
  */
 
 public class MainActivity extends AppCompatActivity {
-    //Button Attributes, these are the attributes appointed to every button on the /xml
+    /**Buttons used to select numbers and operations*/
     Button btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btnEqual,btnAdd,
             btnSub, btnMul, btnDiv, btnClear, btnDec;
-    //TextView attribute, displays the calculations
+    /**TextView displaying the calculations*/
     TextView display;
-    //Double attributes, saves values used in the operation.
+    /**Saves values used in the calculation.*/
     double val1, val2;
-    //boolean attributes, saves the state of which operation is being used
+    /**Saves the state of operation being used*/
     boolean add, sub, mul, div, reset, Eq;
 
-    /*
-    This the the onCreate method for MainActivity.
-    This method is run first when the app launches.
-    This method pulls up the main_activity.xml and declares all the variables on the xml.
-    This method also contains all the onClick methods for the buttons.
-    @param savedInstanceState is a reference to a Bundle object that is passed into the onCreate
-    @return N/A void
+    /**
+     *Runs when app first launches, launching main_activity.xml and declaring all the variables.
+     *This method also contains onClick methods for all buttons.
+     *@param savedInstanceState is a reference to a Bundle object that is passed into the onCreate
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -258,13 +257,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    /*
-    This method calculate takes val1 and val2 which the user previously selected and
-    adds/subtracts/multiplies/divides depending on the selected. It then calculates the answer and displays it
-    @param N/A
-    @return N/A, displays the result
-     */
 
+    /**
+     *Uses val1 and val2 which the user previously inputted and adds/subtracts/multiplies/divides depending on the selected operation button.
+     *It then displays the answer in the TextView 'display'.
+     */
     private void calculate(){
         Eq=false;
         if (!reset && display.getText()!=""){ //no initial value (first +-/* sign)

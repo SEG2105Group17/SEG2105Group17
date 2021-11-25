@@ -24,7 +24,7 @@ public class JUnitTest {
         onView(withText("3")).check(matches(isDisplayed()));
 
 
-        //onView(withId(R.id.display)).check(matches("3"));//check to see if display correct
+        onView(withId(R.id.display)).check(matches(withText("3")));//check to see if display correct
 
     }
     @Test
@@ -34,7 +34,7 @@ public class JUnitTest {
         onView(withId(R.id.btn5)).perform(click());//click button 5
 
         onView(withId(R.id.btnEqual)).perform(click());//click equals
-        onView(withId(R.id.display)).check(matches("4"));//check to see if display correct
+        onView(withId(R.id.display)).check(matches(withText("4")));//check to see if display correct
 
     }
     @Test
@@ -44,7 +44,7 @@ public class JUnitTest {
         onView(withId(R.id.btn8)).perform(click());//click button 8
 
         onView(withId(R.id.btnEqual)).perform(click());//click equals
-        onView(withId(R.id.display)).check(matches("16"));//check to see if display correct
+        onView(withId(R.id.display)).check(matches(withText("16")));//check to see if display correct
 
     }
     @Test
@@ -54,7 +54,7 @@ public class JUnitTest {
         onView(withId(R.id.btn4)).perform(click());//click button 4
 
         onView(withId(R.id.btnEqual)).perform(click());//click equals
-        onView(withId(R.id.display)).check(matches("2"));//check to see if display correct
+        onView(withId(R.id.display)).check(matches(withText("2")));//check to see if display correct
 
     }
 
@@ -67,7 +67,7 @@ public class JUnitTest {
         onView(withId(R.id.btn2)).perform(click());//click button 2
 
         onView(withId(R.id.btnEqual)).perform(click());//click equals
-        onView(withId(R.id.display)).check(matches("3.5"));//check to see if display correct
+        onView(withId(R.id.display)).check(matches(withText("3.5")));//check to see if display correct
 
     }
 
@@ -76,7 +76,7 @@ public class JUnitTest {
         onView(withId(R.id.btn1)).perform(click());//click button 1
         onView(withId(R.id.btnClear)).perform(click());//click button clear
 
-        onView(withId(R.id.display)).check(matches(""));//check to see if display correct
+        onView(withId(R.id.display)).check(matches(withText("")));//check to see if display correct
 
     }
 }
