@@ -4,9 +4,12 @@ package com.example.lab1;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /*
 @author Brett, Daniel, Diyar, Leo, Natasha
@@ -257,7 +260,7 @@ public class MainActivity extends AppCompatActivity {
     }
     /*
     This method calculate takes val1 and val2 which the user previously selected and
-    adds/subtracts/multiplies/divides depending on the selected. It them calculates the answer displays it
+    adds/subtracts/multiplies/divides depending on the selected. It then calculates the answer and displays it
     @param N/A
     @return N/A, displays the result
      */
@@ -306,6 +309,5 @@ public class MainActivity extends AppCompatActivity {
             val2=0.0;
         }
     }
-
 
 }
