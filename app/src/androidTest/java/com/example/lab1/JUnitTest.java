@@ -7,14 +7,24 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.core.StringContains.containsString;
 
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+
+
 import static org.junit.Assert.*;
 
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+@RunWith(AndroidJUnit4.class)
 public class JUnitTest {
-
+    @Rule
+    public ActivityScenarioRule<MainActivity> rule = new ActivityScenarioRule<MainActivity>(MainActivity.class);
     @Test
     public void testAddition(){
+
         onView(withId(R.id.btn1)).perform(click());//click button 1
         onView(withId(R.id.btnAdd)).perform(click());//click button add
         onView(withId(R.id.btn2)).perform(click());//click button 2
