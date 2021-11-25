@@ -30,10 +30,6 @@ public class JUnitTest {
         onView(withId(R.id.btn2)).perform(click());//click button 2
 
         onView(withId(R.id.btnEqual)).perform(click());//click equals
-        //This should work but doesn't on my computer, from the Tutorial 7 slide
-        onView(withText("3")).check(matches(isDisplayed()));
-
-
         onView(withId(R.id.display)).check(matches(withText("3")));//check to see if display correct
 
     }
