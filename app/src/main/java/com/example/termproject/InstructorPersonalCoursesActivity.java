@@ -66,7 +66,7 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
 
                 txtClassInfo.setText("Course: "+course.name +"\nDescription: "+course.description +
                         "\nDate: "+course.date +"\nTime: "+course.time +
-                        "\nDifficulty: "+course.difficulty +"\nCapacity: "+course.capacity);
+                        "\nDifficulty: "+course.difficulty +"\nCapacity: "+course.capacity +"\nMembers: "+ course.membersString);
 
             }
         });
@@ -283,22 +283,41 @@ public class InstructorPersonalCoursesActivity extends AppCompatActivity {
     }
     public boolean isValidTime(String time){
         boolean flag=false;
-        String[] parts;
-        int hour,minute;
-        if(time.contains(":")){
-            parts=time.split(":");
-            try{
-                hour=Integer.parseInt(parts[0]);
-                minute=Integer.parseInt(parts[1]);
-                if((hour<=23 &&hour>=0)&&(minute<=59&&minute>=0)){
-                    flag=true;
+        String[] parts1;
+        String[] start;
+        String[] end;
+
+        int hourS,minuteS,hourE,minuteE;
+        if (time.contains("-")){
+            parts1=time.split("-");
+            if(parts1[0].contains(":")&&parts1[1].contains(":")){
+                start=parts1[0].split(":");
+                end=parts1[1].split(":");
+                try{
+                    hourS=Integer.parseInt(start[0]);
+                    minuteS=Integer.parseInt(start[1]);
+                    hourE=Integer.parseInt(end[0]);
+                    minuteE=Integer.parseInt(end[1]);
+                    if(((hourS<=19 &&hourS>=6)&&(minuteS<=59&&minuteS>=0)||(hourS==20&&minuteS==0)) && (hourE<=19 &&hourE>=6)&&(minuteE<=59&&minuteE>=0)||(hourE==20&&minuteE==0)){
+                        if((hourS<hourE)||(hourS==hourE && minuteS<=minuteE)){
+                            flag=true;
+                        }
+                        else{
+                            txtIID.setText("Please enter valid time period, ie. '6:00-16:00'. The gym is only open from 6:00 to 20:00");
+                        }
+
+                    }
+                }catch(NumberFormatException e){
+                    txtIID.setText("Please enter valid time period, ie. '6:00-16:00'. The gym is only open from 6:00 to 20:00");
                 }
-            }catch(NumberFormatException e){
-                txtIID.setText("Please enter valid time format, ie. '2:00' or '16:00'");
+            }
+            else{
+                txtIID.setText("Please enter valid time period, ie. '6:00-16:00'. The gym is only open from 6:00 to 20:00");
             }
         }
+
         else{
-            txtIID.setText("Please enter valid time format, ie. '2:00' or '16:00'");
+            txtIID.setText("Please enter valid time period, ie. '6:00-16:00'. The gym is only open from 6:00 to 20:00");
         }
         return flag;
     }

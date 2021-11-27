@@ -334,13 +334,34 @@ public class MemberEnrolActivity extends AppCompatActivity {
                 if(mem[i].equals(username)){flag=true;}
             }
 
-            if(flag && date.equals(d)&& time.equals(t)){
+            if(flag && date.equals(d)&& hourConflict(time,t)){
                 conflict=true;
             }
         }
-
         return conflict;
-
-
     }
+    public boolean hourConflict(String time1, String time2){
+        boolean flag=true;
+        String[] parts1,start1,end1,parts2,start2,end2;
+        int S1,S2,E1,E2;
+
+        parts1=time1.split("-");
+        parts2=time2.split("-");
+        start1=parts1[0].split(":");
+        end1=parts1[1].split(":");
+        start2=parts2[0].split(":");
+        end2=parts2[1].split(":");
+
+        S1=Integer.parseInt(start1[0])*60 +Integer.parseInt(start1[1]);
+        E1=Integer.parseInt(end1[0])*60 +Integer.parseInt(end1[1]);
+
+        S2=Integer.parseInt(start2[0])*60+Integer.parseInt(start2[1]);
+        E2=Integer.parseInt(end2[0])*60 +Integer.parseInt(end2[1]);
+
+        if((S1<=S2 && E1<=S2)||(S1>=E2 && E1>=E2)){flag=false;}
+
+
+        return flag;
+    }
+
 }

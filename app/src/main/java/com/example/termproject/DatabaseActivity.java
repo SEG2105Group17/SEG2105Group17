@@ -2,6 +2,7 @@ package com.example.termproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +28,8 @@ public class DatabaseActivity extends AppCompatActivity {
     ArrayList<String> listItem;
     ArrayAdapter adapter;
 
-    Button addBTN, findBTN, deleteBTN;
+
+    Button addBTN, findBTN, deleteBTN, btnBACK;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class DatabaseActivity extends AppCompatActivity {
         addBTN = findViewById(R.id.AddProduct);
         findBTN = findViewById(R.id.FindProduct);
         deleteBTN = findViewById(R.id.DeleteProduct);
+        btnBACK = findViewById(R.id.btnBACK);
 
         MyDBHandler dbHandler = new MyDBHandler(this);
         listItem = new ArrayList<>();
@@ -54,6 +57,12 @@ public class DatabaseActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String text = userList.getItemAtPosition(i).toString();
                 Toast.makeText(DatabaseActivity.this, ""+text, Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnBACK.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                backI01();
             }
         });
     }
@@ -149,5 +158,9 @@ public class DatabaseActivity extends AppCompatActivity {
             userList.setAdapter(adapter);
         }
 
+    }
+    private void backI01(){
+        Intent intent= new Intent(this, AdminSelectActivity.class);
+        startActivity(intent);
     }
 }

@@ -79,10 +79,10 @@
         android:id="@+id/AddProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="25dp"
-        android:text="ADD"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="24dp"
         android:onClick="newUser"
+        android:text="ADD"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
@@ -90,10 +90,11 @@
         android:id="@+id/FindProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="FIND"
+        android:layout_marginTop="24dp"
         android:onClick="lookupUser"
+        android:text="FIND"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.662"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
@@ -101,10 +102,10 @@
         android:id="@+id/DeleteProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="64dp"
-        android:text="DELETE"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
         android:onClick="removeUser"
+        android:text="DELETE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
@@ -116,6 +117,16 @@
         android:layout_marginTop="80dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <Button
+        android:id="@+id/btnBACK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="24dp"
+        android:text="Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
