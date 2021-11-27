@@ -11,6 +11,8 @@ public class ClassClass {
     public int capacity = -1;
 
     public String instructor;
+    public String[] members;
+    public String membersString; //members stored as String in database (':::' delimiter)
 
     // Constructors
     public ClassClass() {
@@ -46,6 +48,8 @@ public class ClassClass {
         this.difficulty = difficulty;
         this.capacity = capasity;
         this.instructor = instructor;
+        members=new String[capacity];
+        membersString="";
     }
 
     public boolean isCourse() {
@@ -83,13 +87,21 @@ public class ClassClass {
 
     public void changeInstructor(String instructor) {
         this.instructor = instructor;
-    };
+    }
+
+    public void changeMembers(String members) {
+        membersString=members;
+        if(members!=""){
+            this.members= members.split(":::");
+        }
+
+    }
 
     // Methods
     // @param int people, amount of people in the class
     // @return, true if room, false if full
     public boolean checkIfFull(int people) {
-        if (people >= capacity) {
+        if (people <= capacity) {
             return false;
         }
         return true;
@@ -123,5 +135,18 @@ public class ClassClass {
     public int getId() {
         return id;
     }
+
+    public String getInstructor() {
+        return instructor;
+    }
+
+    public String[] getMembers() {
+        return members;
+    }
+
+    public String getMembersString() {
+        return membersString;
+    }
+
 
 }

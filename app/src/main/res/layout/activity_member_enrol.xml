@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MemberEnrolActivity">
+
+    <TextView
+        android:id="@+id/txt08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="2dp"
+        android:text="Course ID: "
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt01" />
+
+    <Button
+        android:id="@+id/btnMBack"
+        android:layout_width="95dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="104dp"
+        android:text="Back"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="407dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnUnenrol"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginEnd="27dp"
+        android:text="Unenroll"
+        app:layout_constraintBottom_toTopOf="@+id/listM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt3" />
+
+    <Button
+        android:id="@+id/btnMPCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:text="Personal Courses"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt3" />
+
+    <Button
+        android:id="@+id/btnMAllCourse"
+        android:layout_width="190dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="27dp"
+        android:text="All Courses"
+        app:layout_constraintBottom_toTopOf="@+id/txt3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt04" />
+
+    <Button
+        android:id="@+id/btnEnrol"
+        android:layout_width="112dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="27dp"
+        android:text="Enroll"
+        app:layout_constraintBottom_toTopOf="@+id/txt3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt04" />
+
+    <TextView
+        android:id="@+id/txt03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="14dp"
+        android:text="By Day of the Week:"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt02" />
+
+    <TextView
+        android:id="@+id/txt01"
+        android:layout_width="407dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:text="Search all courses offered by the gym"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
+
+    <TextView
+        android:id="@+id/txt04"
+        android:layout_width="357dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="4dp"
+        android:text="To enroll: View 'all courses', select course from list and 'enroll'"
+        app:layout_constraintBottom_toTopOf="@+id/btnMAllCourse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editMDay" />
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="341dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:text="To unenroll: View 'Personal Courses', select course from list and 'unenroll'"
+        app:layout_constraintBottom_toTopOf="@+id/btnUnenrol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMAllCourse" />
+
+    <TextView
+        android:id="@+id/txt02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:text="By Course Name:"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt01" />
+
+    <EditText
+        android:id="@+id/editMCourse"
+        android:layout_width="252dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="22dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/editMDay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt02"
+        app:layout_constraintTop_toBottomOf="@+id/MID"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/editMDay"
+        android:layout_width="253dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt04"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toEndOf="@+id/txt03"
+        app:layout_constraintTop_toBottomOf="@+id/editMCourse"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ListView
+        android:id="@+id/listM"
+        android:layout_width="393dp"
+        android:layout_height="176dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="4dp"
+        android:background="#E3F3EF"
+        app:layout_constraintBottom_toTopOf="@+id/txtMInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMPCourse" />
+
+    <TextView
+        android:id="@+id/txtMInfo"
+        android:layout_width="393dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="58dp"
+        android:background="#C7DEE1"
+        android:text="Description:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listM" />
+
+    <Button
+        android:id="@+id/btnMSearch"
+        android:layout_width="95dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="4dp"
+        android:text="Search"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/MID"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="71dp"
+        app:layout_constraintBottom_toTopOf="@+id/editMCourse"
+        app:layout_constraintStart_toEndOf="@+id/txt08"
+        app:layout_constraintTop_toBottomOf="@+id/btnMSearch" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

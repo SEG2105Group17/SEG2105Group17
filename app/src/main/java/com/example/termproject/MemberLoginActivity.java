@@ -38,11 +38,25 @@ public class MemberLoginActivity extends AppCompatActivity {
     }
 
     public void newMember(View view){
-        MyDBHandler dbHandler = new MyDBHandler(this);
-        User user = new User(usernameBox.getText().toString(), "Member");
-        dbHandler.addUser(user);
-        usernameBox.setText("");
-        passwordBox.setText("");
 
+        if(!usernameBox.getText().toString().trim().equals("") &&!passwordBox.getText().toString().trim().equals("")){
+            MyDBHandler dbHandler = new MyDBHandler(this);
+            User user = new User(usernameBox.getText().toString(), "Member");
+            dbHandler.addUser(user);
+
+            //start member enrol activity
+            Intent intent = new Intent(this, MemberEnrolActivity.class);
+            intent.putExtra("username", usernameBox.getText().toString().trim());
+            startActivity(intent);
+        }
+        if(usernameBox.getText().toString().trim().equals("")){usernameBox.setHint("Please enter username");}
+        if(passwordBox.getText().toString().trim().equals("")){passwordBox.setHint("Please enter password");}
+    }
+
+
+
+    private void back01(View view){
+        Intent intent= new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

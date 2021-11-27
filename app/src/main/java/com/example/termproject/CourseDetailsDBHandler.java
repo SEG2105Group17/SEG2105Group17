@@ -20,6 +20,7 @@ public class CourseDetailsDBHandler extends SQLiteOpenHelper{
     private static final String COLUMN_DIFFICULTY="difficulty";
     private static final String COLUMN_CAPACITY="capacity";
     private static final String COLUMN_INSTRUCTOR="instructor";
+    private static final String COLUMN_MEMBERS="members";
 
     public CourseDetailsDBHandler(Context context){
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
@@ -31,7 +32,8 @@ public class CourseDetailsDBHandler extends SQLiteOpenHelper{
                 + COLUMN_COURSENAME+" TEXT,"
                 + COLUMN_DESCRIPTION+" TEXT,"+ COLUMN_DATE +" TEXT,"+
                 COLUMN_TIME +" TEXT," + COLUMN_DIFFICULTY +" INTEGER,"+
-                COLUMN_CAPACITY+" INTEGER,"+COLUMN_INSTRUCTOR+" TEXT"+ ")";
+                COLUMN_CAPACITY+" INTEGER,"+COLUMN_INSTRUCTOR+" TEXT,"+
+                COLUMN_MEMBERS+ " TEXT" +")";
         db.execSQL(CREATE_COURSES_TABLE);
     }
     @Override
@@ -52,6 +54,7 @@ public class CourseDetailsDBHandler extends SQLiteOpenHelper{
         values.put(COLUMN_DIFFICULTY,course.difficulty);
         values.put(COLUMN_CAPACITY,course.capacity);
         values.put(COLUMN_INSTRUCTOR,course.instructor);
+        values.put(COLUMN_MEMBERS,course.membersString);
 
         db.insert(TABLE_COURSES,null,values);
         db.close();
@@ -72,6 +75,7 @@ public class CourseDetailsDBHandler extends SQLiteOpenHelper{
             course.changeDifficulty(cursor.getInt(5));
             course.changeCapacity(cursor.getInt(6));
             course.changeInstructor(cursor.getString(7));
+            course.changeMembers(cursor.getString(8));
 
             cursor.close();
         }else{
@@ -96,6 +100,7 @@ public class CourseDetailsDBHandler extends SQLiteOpenHelper{
             course.changeDifficulty(cursor.getInt(5));
             course.changeCapacity(cursor.getInt(6));
             course.changeInstructor(cursor.getString(7));
+            course.changeMembers(cursor.getString(8));
 
             cursor.close();
         }else{
@@ -120,6 +125,7 @@ public class CourseDetailsDBHandler extends SQLiteOpenHelper{
             course.changeDifficulty(cursor.getInt(5));
             course.changeCapacity(cursor.getInt(6));
             course.changeInstructor(cursor.getString(7));
+            course.changeMembers(cursor.getString(8));
 
             cursor.close();
         }else{
@@ -177,11 +183,22 @@ public class CourseDetailsDBHandler extends SQLiteOpenHelper{
         db.execSQL(strSQL);
         db.close();
     }
-
     public Cursor viewData(){
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM "+TABLE_COURSES;
         Cursor cursor = db.rawQuery(query,null);
         return cursor;
     }
+
+
+    //FOR MEMBER
+    public void editMember(int id,String members){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String strSQL = "UPDATE "+TABLE_COURSES+" SET "+COLUMN_MEMBERS+" = \""+
+                members+ "\" WHERE "+ COLUMN_ID+" = \""+ id+"\"";
+
+        db.execSQL(strSQL);
+        db.close();
+    }
+
 }
