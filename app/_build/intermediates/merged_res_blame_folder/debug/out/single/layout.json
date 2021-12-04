@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_instructor_select.xml",
+        "source": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\src\\main\\res\\layout\\activity_instructor_select.xml"
+    },
+    {
+        "merged": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_instructor_personal_courses.xml",
+        "source": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\src\\main\\res\\layout\\activity_instructor_personal_courses.xml"
+    },
+    {
+        "merged": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_instructor_login.xml",
+        "source": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\src\\main\\res\\layout\\activity_instructor_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_course_dbactivity.xml",
+        "source": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\src\\main\\res\\layout\\activity_course_dbactivity.xml"
+    },
+    {
+        "merged": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_instructor_search_courses.xml",
+        "source": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\src\\main\\res\\layout\\activity_instructor_search_courses.xml"
+    },
+    {
+        "merged": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_admin_login.xml",
+        "source": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\src\\main\\res\\layout\\activity_admin_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_database.xml",
+        "source": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\src\\main\\res\\layout\\activity_database.xml"
+    },
+    {
+        "merged": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_member_login.xml",
+        "source": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\src\\main\\res\\layout\\activity_member_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_admin_select.xml",
+        "source": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\src\\main\\res\\layout\\activity_admin_select.xml"
+    },
+    {
+        "merged": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\16132\\Documents\\GitHub\\SEG2105Group17\\app\\src\\main\\res\\layout\\activity_main.xml"
+    }
+]

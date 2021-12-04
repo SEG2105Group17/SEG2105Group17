@@ -1,0 +1,67 @@
+com/example/databases/MyDBHandler.java
+ com.example.databases.MyDBHandler
+com/example/termproject/User.java
+ com.example.termproject.User
+com/example/termproject/BuildConfig.java
+ com.example.termproject.BuildConfig
+com/example/termproject/InstructorLoginActivity.java
+ com.example.termproject.InstructorLoginActivity
+ com.example.termproject.InstructorLoginActivity$1
+ com.example.termproject.InstructorLoginActivity$2
+com/example/termproject/MainActivity.java
+ com.example.termproject.MainActivity
+com/example/termproject/databinding/ActivityInstructorSelectBinding.java
+ com.example.termproject.databinding.ActivityInstructorSelectBinding
+com/example/termproject/MemberLoginActivity.java
+ com.example.termproject.MemberLoginActivity
+ com.example.termproject.MemberLoginActivity$1
+com/example/termproject/databinding/ActivityInstructorSearchCoursesBinding.java
+ com.example.termproject.databinding.ActivityInstructorSearchCoursesBinding
+com/example/termproject/databinding/ActivityMainBinding.java
+ com.example.termproject.databinding.ActivityMainBinding
+com/example/termproject/AdminLoginActivity.java
+ com.example.termproject.AdminLoginActivity
+ com.example.termproject.AdminLoginActivity$1
+com/example/termproject/databinding/ActivityInstructorPersonalCoursesBinding.java
+ com.example.termproject.databinding.ActivityInstructorPersonalCoursesBinding
+com/example/termproject/databinding/ActivityDatabaseBinding.java
+ com.example.termproject.databinding.ActivityDatabaseBinding
+com/example/termproject/AdminSelectActivity.java
+ com.example.termproject.AdminSelectActivity
+ com.example.termproject.AdminSelectActivity$1
+ com.example.termproject.AdminSelectActivity$2
+ com.example.termproject.AdminSelectActivity$3
+com/example/termproject/InstructorSearchCourses.java
+ com.example.termproject.InstructorSearchCourses
+com/example/termproject/databinding/ActivityAdminLoginBinding.java
+ com.example.termproject.databinding.ActivityAdminLoginBinding
+com/example/termproject/DatabaseActivity.java
+ com.example.termproject.DatabaseActivity
+ com.example.termproject.DatabaseActivity$1
+com/example/termproject/databinding/ActivityCourseDbactivityBinding.java
+ com.example.termproject.databinding.ActivityCourseDbactivityBinding
+com/example/termproject/databinding/ActivityInstructorLoginBinding.java
+ com.example.termproject.databinding.ActivityInstructorLoginBinding
+com/example/termproject/databinding/ActivityMemberLoginBinding.java
+ com.example.termproject.databinding.ActivityMemberLoginBinding
+com/example/termproject/databinding/ActivityAdminSelectBinding.java
+ com.example.termproject.databinding.ActivityAdminSelectBinding
+com/example/termproject/ClassClass.java
+ com.example.termproject.ClassClass
+com/example/termproject/CourseDetailsDBHandler.java
+ com.example.termproject.CourseDetailsDBHandler
+com/example/termproject/InstructorSelectActivity.java
+ com.example.termproject.InstructorSelectActivity
+ com.example.termproject.InstructorSelectActivity$1
+ com.example.termproject.InstructorSelectActivity$2
+ com.example.termproject.InstructorSelectActivity$3
+com/example/termproject/CourseDBHandler.java
+ com.example.termproject.CourseDBHandler
+com/example/termproject/CourseDBActivity.java
+ com.example.termproject.CourseDBActivity
+ com.example.termproject.CourseDBActivity$1
+ com.example.termproject.CourseDBActivity$2
+com/example/termproject/InstructorPersonalCoursesActivity.java
+ com.example.termproject.InstructorPersonalCoursesActivity
+ com.example.termproject.InstructorPersonalCoursesActivity$1
+ com.example.termproject.InstructorPersonalCoursesActivity$2
