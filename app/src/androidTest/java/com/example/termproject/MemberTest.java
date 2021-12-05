@@ -27,15 +27,27 @@ public class MemberTest {
     @Rule
     public ActivityScenarioRule<MemberEnrolActivity> rule = new ActivityScenarioRule<MemberEnrolActivity>(MemberEnrolActivity.class);
 
+    /*
     @Test
     public void testCourseName(){
         onView(withId(R.id.editMCourse)).perform(typeText("Pushups"));
         onView(withText("Pushups")).check(matches(isDisplayed()));
     }
-
+    *
+     */
+    /*
     @Test
     public void testDay(){
-        onView(withId(R.id.editMDay)).perform(typeText("Monday"));
-        onView(withText("Monday")).check(matches(isDisplayed()));
+        onView(withId(R.id.editMDay)).perform(typeText("monday"));
+        onView(withText("monday")).check(matches(isDisplayed()));
     }
+    */
+    /*
+    @Test
+    public void testCourseName2(){
+        onView(withId(R.id.editMCourse)).perform(typeText("Situps"));
+        onView(withText("Situps")).check(matches(isDisplayed()));
+    }
+
+     */
 }

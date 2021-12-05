@@ -28,11 +28,30 @@ public class MemberLoginTest {
     public void testValidUsername(){
         onView(withId(R.id.editUsernameA)).perform(typeText("Bill"));
         onView(withText("Bill")).check(matches(isDisplayed()));
+        //onView(withText("Bill")).check(matches(R.id.editUsernameA.getText.toString()));
     }
 
     @Test
     public void testValidPassword(){
         onView(withId(R.id.editPasswordA)).perform(typeText("Bill"));
         onView(withText("Bill")).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void testValidUsername2(){
+        onView(withId(R.id.editPasswordA)).perform(typeText("Joe"));
+        onView(withText("Joe")).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void testValidUsername3(){
+        onView(withId(R.id.editPasswordA)).perform(typeText("Sandy"));
+        onView(withText("Sandy")).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void testValidPassword2(){
+        onView(withId(R.id.editPasswordA)).perform(typeText("123"));
+        onView(withText("123")).check(matches(isDisplayed()));
     }
 }
